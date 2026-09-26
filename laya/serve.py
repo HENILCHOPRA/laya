@@ -34,6 +34,7 @@ Imports of heavy dependencies (fastapi, uvicorn, torch via Router) are all
 deferred into the functions that need them, so ``import laya.serve`` stays cheap
 and touches no GPU -- which is what keeps the Nix ``pythonImportsCheck`` honest.
 """
+import asyncio
 import hmac
 import json
 import logging
@@ -59,6 +60,9 @@ _KNOWN_MODELS = {"english", "multilingual", "typed-decisions"}
 MAX_QUESTIONS = 64
 MAX_STATE_CHARS = 50000
 MAX_BODY_BYTES = 2 * 1024 * 1024
+# Laya-V: a body carrying a base64 `state.image` may be larger; any other body keeps the cap above.
+MAX_IMAGE_BODY_BYTES = 24 * 1024 * 1024
+MAX_IMAGE_BYTES = 16 * 1024 * 1024
 # HTTP-only amplification guard; the library keeps its head_max_len-aware budget.
 MAX_CHOICE_OPTIONS = 100
 MAX_SCORE_LEVELS = 32
@@ -173,6 +177,8 @@ def _check_request_limits(state: Any, questions: Any) -> None:
             detail="too many answer options across questions (%d > %d)" % (total_options, MAX_TOTAL_OPTIONS),
         )
 
+    if isinstance(state, dict) and "image" in state:
+        state = {k: v for k, v in state.items() if k != "image"}  # the image has its own byte cap
     try:
         state_len = len(state) if isinstance(state, str) else len(str(state))
     except Exception:
@@ -180,6 +186,24 @@ def _check_request_limits(state: Any, questions: Any) -> None:
     if state_len > MAX_STATE_CHARS:
         raise HTTPException(status_code=413,
                             detail="state too large (%d > %d chars)" % (state_len, MAX_STATE_CHARS))
+
+
+async def _decode_state_image(state: Dict[str, Any]) -> Dict[str, Any]:
+    """Replace `state.image` (base64, data URI or http(s) URL) with its bytes.
+
+    A server never reads local paths from a request. URLs are fetched with a size cap, a
+    timeout, no redirects and public hosts only; LAYA_IMAGE_URLS=0 turns URL fetching off."""
+    from fastapi import HTTPException
+
+    from .vision import resolve_image_field
+
+    allow = _env_bool("LAYA_IMAGE_URLS", True)
+    try:
+        data = await asyncio.get_running_loop().run_in_executor(
+            None, lambda: resolve_image_field(state["image"], allow_urls=allow, max_bytes=MAX_IMAGE_BYTES))
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    return dict(state, image=data)
 
 
 async def _read_body_capped(request: Any) -> bytes:
@@ -200,7 +224,7 @@ async def _read_body_capped(request: Any) -> bytes:
         if not chunk:
             continue
         total += len(chunk)
-        if total > MAX_BODY_BYTES:
+        if total > MAX_IMAGE_BODY_BYTES:
             # Stop reading rather than draining the rest: the peer is already over
             # the limit and nothing further can make the request acceptable.
             raise HTTPException(status_code=413, detail="request body too large")
@@ -336,7 +360,7 @@ def create_app(router: Optional[Any] = None):
         # no length or understate it.
         if request.headers.get("content-length"):
             try:
-                if int(request.headers["content-length"]) > MAX_BODY_BYTES:
+                if int(request.headers["content-length"]) > MAX_IMAGE_BODY_BYTES:
                     raise HTTPException(status_code=413, detail="request body too large")
             except ValueError:
                 pass
@@ -353,6 +377,11 @@ def create_app(router: Optional[Any] = None):
             raise HTTPException(status_code=400, detail="request body must be an object with a 'questions' field")
         state = body.get("state")
         questions = body["questions"]
+        has_image = isinstance(state, dict) and state.get("image") is not None
+        if len(raw) > MAX_BODY_BYTES and not has_image:
+            raise HTTPException(status_code=413, detail="request body too large")
+        if has_image:
+            state = await _decode_state_image(state)
         _check_request_limits(state, questions)
         model = _resolve_model(body.get("model"))
         if gate is None:

@@ -182,6 +182,7 @@ def laya_route_tool(state: dict, questions: dict) -> str:
         "Answer typed questions (choice/score/noul) over any state in one forward pass. "
         "questions: {name: {type: 'choice'|'score'|'noul', instructions: str, criteria?: object|array}}. "
         "For noul, optional labels: {false: str, true: str} changes the model-facing option text. "
+        "state may include image: a base64 string, data: URI or http(s) URL; it routes to the vision checkpoint. "
         "Returns answers with confidence, routing metadata and, when it can be read, the real "
         "device of the checkpoint that answered. "
         + _GUARDRAILS

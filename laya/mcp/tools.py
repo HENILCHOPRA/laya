@@ -28,7 +28,7 @@ PRESETS: dict[str, str] = {
 }
 
 VALID_TYPES = {"choice", "score", "noul"}
-VALID_MODELS = {"auto", "english", "multilingual", "typed-decisions"}
+VALID_MODELS = {"auto", "english", "multilingual", "typed-decisions", "vision"}
 
 
 def validate_questions(questions: Any) -> dict:
@@ -88,7 +88,19 @@ def validate_questions(questions: Any) -> dict:
 def validate_state(state: Any) -> dict:
     if not isinstance(state, dict) or not state:
         raise ToolError("invalid_state", "state must be a non-empty JSON object")
-    return dict(state)
+    state = dict(state)
+    if state.get("image") is not None and not isinstance(state["image"], (bytes, bytearray)):
+        # Laya-V: base64, data URI or http(s) URL; never a local path from a tool call.
+        import os
+
+        from ..vision import resolve_image_field
+
+        allow = os.environ.get("LAYA_IMAGE_URLS", "1").strip().lower() not in ("0", "false", "no", "off")
+        try:
+            state["image"] = resolve_image_field(state["image"], allow_urls=allow)
+        except ValueError as e:
+            raise ToolError("invalid_image", str(e)) from e
+    return state
 
 
 def validate_preset(preset: Any) -> str:

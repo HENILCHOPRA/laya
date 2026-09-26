@@ -80,6 +80,34 @@ for text in ["मुझसे मार्च में दो बार शु�
 
 From the command line, `laya "My payment failed twice" --preset triage` answers a ready-made question set. More in the [full quickstart](#quickstart-route-mode-recommended) and the [docs](https://nandhakishorm.github.io/laya/).
 
+### Images (Laya-V)
+
+Put an image in the state and the `Router` sends the request to the vision checkpoint, built on
+`laya-multilingual`. The questions and the answer format are unchanged.
+
+```python
+from PIL import Image
+
+result = router.predict(
+    {"image": Image.open("receipt.jpg"), "note": "Reimbursement claim"},
+    {"over_limit": {"type": "noul", "instructions": "Is the receipt total above 50?"},
+     "category": {"type": "choice", "instructions": "What was bought?",
+                  "criteria": {"meals": "food and drink", "travel": "transport, hotels", "other": "everything else"}}},
+)
+print(result["routing"]["model"])   # vision
+```
+
+- `state["image"]` can be a PIL image, a file path, raw bytes or a base64 string. `laya-serve` and the
+  MCP server also accept an http(s) URL; they refuse private addresses, and `LAYA_IMAGE_URLS=0` turns
+  URL fetching off.
+- `state["image_detail"]` (`low`, `mid` or `high`) sets how many image patches are read (256, 576 or
+  1,024). Without it, large images and images with an extreme aspect ratio get 1,024 patches.
+- The vision checkpoint loads on the first image request. Text-only deployments never download it.
+  Set `LAYA_VISION_REPO` to point the `vision` route at another repo or a local directory.
+- Supported: one image per request, through `predict` and `predict_batch`. The fast path (`fast=True`),
+  ONNX and `predict_long` do not support images yet.
+- Training pipeline and data: [`research/vision/`](research/vision/README.md).
+
 ## Fine-tune for better accuracy
 
 The shipped checkpoints work zero-shot, but fine-tuning on decisions from your own domain is where accuracy jumps. On the typed-decisions benchmark (2,000 decisions across four workflows), the fine-tuned `laya-typed-decisions` checkpoint scores **0.766** accuracy, against **0.362** for the base English checkpoint on the same decisions.

@@ -1,0 +1,8 @@
+{
+ "gpu": "Tesla T4", "dtype": "torch.float16", "patches": 576, "measured": "2026-09-25, Colab, latency_gate.py",
+ "so400m_q1": {"p50_ms": 67.3, "p95_ms": 73.0}, "so400m_q5": {"p50_ms": 76.8, "p95_ms": 81.2},
+ "so400m_q10": {"p50_ms": 102.1, "p95_ms": 109.9},
+ "b16_q1": {"p50_ms": 45.9, "p95_ms": 52.4}, "b16_q5": {"p50_ms": 50.8, "p95_ms": 56.1},
+ "b16_q10": {"p50_ms": 73.7, "p95_ms": 77.8},
+ "decision": "so400m"
+}

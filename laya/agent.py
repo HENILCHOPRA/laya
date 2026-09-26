@@ -27,6 +27,7 @@ from .common import (
     render_options,
     serialize_state,
     temp_bucket,
+    temp_key,
 )
 from .hooks import (
     HookRegistry, PredictContext, aggregate_usage, compose_hooks, dispatch, normalise_hooks,
@@ -232,6 +233,7 @@ class Agent(HookRegistry):
     mps_amp_min_rows = MPS_AMP_MIN_ROWS_DEFAULT
     # The stock forward is also used by lightweight runtimes built with __new__ in tests.
     _fast = None
+    temperature_image = None
 
     def __init__(
         self,
@@ -394,6 +396,9 @@ class Agent(HookRegistry):
         self.temperature = [clamp_temperature(t) for t in self.temperature_raw]
         self.temperature_by_options = {k: clamp_temperature(v)
                                        for k, v in self.temperature_by_options_raw.items()}
+        # Laya-V: per-type temperatures for image answers (None: fall back to the text values).
+        t_img = self.cfg.get("temperature_image")
+        self.temperature_image = [clamp_temperature(t) for t in t_img] if t_img else None
 
         self.lang_temperatures = {}
         for l, cfg in (lang_temperatures or {}).items():
@@ -654,6 +659,9 @@ class Agent(HookRegistry):
         """
         max_len = self.cfg.get("max_len", 512) if max_len is None else max_len
         head_max_len = self.cfg.get("head_max_len", 192) if head_max_len is None else head_max_len
+        image = None
+        if isinstance(state, dict) and "image" in state:
+            state, image = self._split_image(state)
         # A chronological conversation list is serialized newest-last, so the default
         # right-truncation (st[:room]) would silently drop the newest turn. Truncate
         # from the left for lists so the most recent intent is preserved.
@@ -668,14 +676,38 @@ class Agent(HookRegistry):
             add_special_tokens=False,
         )["input_ids"]
         items = []
+        slots = self.model.vision.slots if image is not None else 0
         for qid in ids:
             q = internal[qid]
-            seq, markers = build_sequence(self.tok, state, q, max_len, head_max_len,
-                                          truncate_left=truncate_left, state_ids=state_ids)
+            img_pos = -1
+            if slots:
+                seq, markers, img_pos = build_sequence(self.tok, state, q, max_len, head_max_len,
+                                                       truncate_left=truncate_left, state_ids=state_ids,
+                                                       image_slots=slots)
+            else:
+                seq, markers = build_sequence(self.tok, state, q, max_len, head_max_len,
+                                              truncate_left=truncate_left, state_ids=state_ids)
             if len(markers) != len(render_options(q)):
                 raise ValueError("question %r options exceed head_max_len=%d" % (qid, head_max_len))
-            items.append({"ids": seq, "markers": markers, "qtype": QTYPES[q["t"]]})
+            item = {"ids": seq, "markers": markers, "qtype": QTYPES[q["t"]]}
+            if slots:
+                # Every row of this state shares one image; the vision tower runs once for it.
+                item["img_pos"], item["image"] = img_pos, image
+            items.append(item)
         return items
+
+    def _split_image(self, state: Dict) -> tuple:
+        """Separate `image` (and `image_detail`) from a dict state: (text state, (PIL image, patch budget))."""
+        if getattr(self.model, "vision", None) is None:
+            raise ValueError(
+                "state has an 'image' but this checkpoint has no vision encoder. Load the vision "
+                "checkpoint (Router routes image states to it automatically).")
+        from .vision import choose_budget, load_image
+        img = load_image(state["image"])
+        budget = choose_budget(img, state.get("image_detail"))
+        rest = {k: v for k, v in state.items() if k not in ("image", "image_detail")}
+        # An image with no other fields has an empty text state rather than the literal "{}".
+        return (rest if rest else ""), (img, budget)
 
     def _amp_enabled_for(self, rows: int) -> bool:
         """Whether to autocast a forward with `rows` question rows.
@@ -700,17 +732,32 @@ class Agent(HookRegistry):
                 % (self._fast.max_len, b["input_ids"].shape[1], self._fast.max_len)
             )
 
+        pixels = None
+        if b.get("images"):
+            if self._fast is not None:
+                raise ValueError("the CUDA fast path does not support image states yet; load without fast=True")
+            from .vision import preprocess
+            imgs, budgets = zip(*b["images"])
+            pixels = preprocess(list(imgs), list(budgets), self.model.vision.patch_size)
+
         def run():
             # Recomputed inside run() so a fallback that disables amp (or moves to CPU) takes
             # effect on the retry. A disabled gate never enters torch.autocast at all.
             enabled = self._amp_enabled_for(b["input_ids"].shape[0])
             with _amp_context(self.device, self.dtype, enabled):
+                extra = {}
+                if pixels is not None:
+                    # The tower and resampler run once per image; rows index into the result.
+                    extra = {"vis_tokens": self.model.vision(**{k: v.to(self.device) for k, v in pixels.items()}),
+                             "vis_index": b["vis_index"].to(self.device),
+                             "img_pos": b["img_pos"].to(self.device)}
                 return self.model(
                     b["input_ids"].to(self.device),
                     b["attention_mask"].to(self.device),
                     b["marker_pos"].to(self.device),
                     b["marker_mask"].to(self.device),
                     b["qtype"].to(self.device),
+                    **extra,
                 )
 
         try:
@@ -769,6 +816,12 @@ class Agent(HookRegistry):
             if lang and lang.split("-")[0].lower() in self.lang_temperatures:
                 l_cfg = self.lang_temperatures[lang.split("-")[0].lower()]
                 t_scale = l_cfg["temperature_by_options"].get(temp_bucket(qt, k), l_cfg["temperature"][qt])
+            if items[j].get("img_pos", -1) >= 0:
+                # Image answers are calibrated on their own scale: `image|<bucket>` first, then
+                # the per-type `temperature_image`, then the text values above.
+                t_scale = self.temperature_by_options.get(
+                    temp_key(qt, k, "image"),
+                    self.temperature_image[qt] if self.temperature_image else t_scale)
             z = logits[r, :k] / t_scale
             p = np.exp(z - z.max())
             p = p / p.sum()
@@ -913,7 +966,15 @@ class Agent(HookRegistry):
                                 indices = order[offset:offset + chunk]
                                 per_state_items = [encoded[i] for i in indices]
 
+                                images = []
+                                for items_ in per_state_items:
+                                    if items_ and items_[0].get("image") is not None:
+                                        for it in items_:
+                                            it["image_idx"] = len(images)
+                                        images.append(items_[0]["image"])
                                 b = collate_items(per_state_items, self.tok.pad_token_id)
+                                if images:
+                                    b["images"] = images
                                 logits, act = self._forward(b)
                                 att = b["attention_mask"]
 
@@ -1000,6 +1061,8 @@ class Agent(HookRegistry):
             raise ValueError("predict_long: only aggregate='auto' is supported")
         max_len = self.cfg.get("max_len", 512)
         head_max_len = self.cfg.get("head_max_len", 192)
+        if isinstance(state, dict) and "image" in state:
+            raise ValueError("predict_long does not support image states yet; use predict()")
         budget = window if (window and window > 0) else max(64, max_len - head_max_len - 8)
 
         state_ids = self.tok(serialize_state(state).replace(self.tok.mask_token, " "),

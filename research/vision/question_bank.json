@@ -1,0 +1,4047 @@
+{
+ "chart.annotation": {
+  "paraphrases": [
+   "How heavily is it annotated?",
+   "What amount of annotation does it have?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "لا شيء",
+     "ملاحظات قليلة",
+     "بعض الملاحظات",
+     "مُعلَّم بكثافة"
+    ],
+    "instructions": "كم مقدار التعليقات التوضيحية التي يحتوي عليها؟"
+   },
+   "de": {
+    "criteria": [
+     "keine",
+     "minimal",
+     "einige Notizen",
+     "stark annotiert"
+    ],
+    "instructions": "Wie stark ist es annotiert?"
+   }
+  }
+ },
+ "chart.axis_labels": {
+  "paraphrases": [
+   "Are labels shown on the axes?",
+   "Do the axes have labels?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل المحاور موسومة؟"
+   },
+   "de": {
+    "instructions": "Sind die Achsen beschriftet?"
+   }
+  }
+ },
+ "chart.change_magnitude": {
+  "paraphrases": [
+   "How much does the value change from the first measurement to the last?",
+   "What is the magnitude of the difference between the initial and final values?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "sem mudança",
+     "pequena mudança",
+     "grande mudança",
+     "mudança drástica"
+    ],
+    "instructions": "Qual é a magnitude da mudança entre o primeiro e o último valor?"
+   },
+   "zh": {
+    "criteria": [
+     "没有变化",
+     "变化较小",
+     "变化较大",
+     "剧烈变化"
+    ],
+    "instructions": "从第一个值到最后一个值的变化有多大？"
+   }
+  }
+ },
+ "chart.chart_type": {
+  "paraphrases": [
+   "Which chart type is shown here?",
+   "What category of figure is displayed in the image?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "bar": "مخطط أعمدة أو أشرطة",
+     "line": "مخطط خطي",
+     "pie": "مخطط دائري أو حلقي",
+     "scatter": "مخطط scatter plot",
+     "area": "مخطط مساحي",
+     "table": "جدول",
+     "diagram": "مخطط انسيابي أو توضيحي",
+     "map": "خريطة",
+     "other": "نوع آخر"
+    },
+    "instructions": "ما نوع هذا الرسم؟"
+   },
+   "de": {
+    "criteria": {
+     "bar": "Balken- oder Säulendiagramm",
+     "line": "Liniendiagramm",
+     "pie": "Kreis- oder Donut-Diagramm",
+     "scatter": "Streudiagramm",
+     "area": "Flächendiagramm",
+     "table": "Tabelle",
+     "diagram": "Flussdiagramm oder Schaubild",
+     "map": "Karte",
+     "other": "eine andere Art"
+    },
+    "instructions": "Was für eine Art von Diagramm ist dies?"
+   }
+  }
+ },
+ "chart.color_scheme": {
+  "paraphrases": [
+   "How many colours are used?",
+   "In what way is colour used in the image?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "single_color": "एक रंग",
+     "few_colors": "दो से चार रंग",
+     "many_colors": "पाँच या अधिक रंग",
+     "grayscale": "केवल काला, सफेद और धूसर"
+    },
+    "instructions": "रंग का उपयोग कैसे किया गया है?"
+   },
+   "ja": {
+    "criteria": {
+     "single_color": "1色",
+     "few_colors": "2〜4色",
+     "many_colors": "5色以上",
+     "grayscale": "黒、白、グレーのみ"
+    },
+    "instructions": "色はどのように使用されていますか？"
+   }
+  }
+ },
+ "chart.data_labels": {
+  "paraphrases": [
+   "Are precise numerical values displayed on the bars, points, or cells?",
+   "Do the bars, points, or cells have exact values written on them?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "Há valores exatos escritos nas barras, nos pontos ou nas células?"
+   },
+   "zh": {
+    "instructions": "条形、点或单元格上是否写有精确数值？"
+   }
+  }
+ },
+ "chart.density": {
+  "paraphrases": [
+   "How dense is the information?",
+   "How much information is contained in it?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": [
+     "लगभग कोई सामग्री नहीं",
+     "हल्की",
+     "मध्यम",
+     "बहुत सघन"
+    ],
+    "instructions": "इसमें कितनी जानकारी भरी हुई है?"
+   },
+   "ja": {
+    "criteria": [
+     "ほとんど内容が詰まっていない",
+     "少ない",
+     "適度",
+     "非常に密集している"
+    ],
+    "instructions": "どれだけの情報が詰まっていますか？"
+   }
+  }
+ },
+ "chart.diagram_kind": {
+  "paraphrases": [
+   "Assuming the image is a diagram, which type does it represent?",
+   "If the image shows a diagram, what category should it be classified as?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "process_flow": "fluxograma ou processo",
+     "hierarchy": "árvore ou organograma",
+     "network": "nós e conexões",
+     "venn": "diagrama de Venn",
+     "timeline": "linha do tempo",
+     "not_a_diagram": "não é um diagrama"
+    },
+    "instructions": "Se esta for uma imagem de diagrama, que tipo de diagrama ela representa?"
+   },
+   "zh": {
+    "criteria": {
+     "process_flow": "流程图或过程图",
+     "hierarchy": "树状图或组织结构图",
+     "network": "节点与连接图",
+     "venn": "维恩图",
+     "timeline": "时间线",
+     "not_a_diagram": "不是图表"
+    },
+    "instructions": "如果这是一张图表，它属于哪一种类型？"
+   }
+  }
+ },
+ "chart.has_legend": {
+  "paraphrases": [
+   "Is there a legend present?",
+   "Does the image include a legend?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "Há uma legenda?"
+   },
+   "zh": {
+    "instructions": "有图例吗？"
+   }
+  }
+ },
+ "chart.has_negative": {
+  "paraphrases": [
+   "Do any of the values shown fall below zero?",
+   "Is there at least one negative value?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या कोई मान ऋणात्मक है?"
+   },
+   "ja": {
+    "instructions": "負の値はありますか？"
+   }
+  }
+ },
+ "chart.has_title": {
+  "paraphrases": [
+   "Is a title present on the figure?",
+   "Does the figure include a title?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या आकृति में शीर्षक है?"
+   },
+   "ja": {
+    "instructions": "図にはタイトルがありますか？"
+   }
+  }
+ },
+ "chart.is_chart": {
+  "paraphrases": [
+   "Is this a chart or a graph?",
+   "Does this image show a chart or a graph?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل هذا رسم بياني أم مخطط؟"
+   },
+   "de": {
+    "instructions": "Ist dies ein Diagramm oder eine Grafik?"
+   }
+  }
+ },
+ "chart.is_table": {
+  "paraphrases": [
+   "Is this mainly a table containing values?",
+   "Would you describe this primarily as a table of numerical values?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿Es esto principalmente una tabla de valores?"
+   },
+   "fr": {
+    "instructions": "Est-ce principalement un tableau de valeurs ?"
+   }
+  }
+ },
+ "chart.largest_position": {
+  "paraphrases": [
+   "In which category or point is the highest value found?",
+   "Where does the maximum value occur?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "first": "a primeira categoria ou o ponto mais inicial",
+     "middle": "em algum lugar no meio",
+     "last": "a última categoria ou o ponto mais recente",
+     "not_applicable": "não é possível saber"
+    },
+    "instructions": "Onde está localizado o maior valor?"
+   },
+   "zh": {
+    "criteria": {
+     "first": "第一个类别或最早的时间点",
+     "middle": "中间的某个位置",
+     "last": "最后一个类别或最晚的时间点",
+     "not_applicable": "无法判断"
+    },
+    "instructions": "最大值位于哪里？"
+   }
+  }
+ },
+ "chart.multiple_series": {
+  "paraphrases": [
+   "Are multiple data series displayed?",
+   "Does the visualization contain more than one data series?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "A imagem mostra mais de uma série de dados?"
+   },
+   "zh": {
+    "instructions": "图像中是否显示了多个数据系列？"
+   }
+  }
+ },
+ "chart.num_categories": {
+  "paraphrases": [
+   "How many categories or rows are displayed?",
+   "What number of categories or rows does the image show?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "اثنان أو ثلاثة",
+     "من أربعة إلى ستة",
+     "من سبعة إلى اثني عشر",
+     "أكثر من اثني عشر"
+    ],
+    "instructions": "كم عدد الفئات أو الصفوف التي يعرضها؟"
+   },
+   "de": {
+    "criteria": [
+     "zwei oder drei",
+     "vier bis sechs",
+     "sieben bis zwölf",
+     "mehr als zwölf"
+    ],
+    "instructions": "Wie viele Kategorien oder Zeilen werden gezeigt?"
+   }
+  }
+ },
+ "chart.num_series": {
+  "paraphrases": [
+   "What is the number of data series displayed in the image?",
+   "How many data series does the image show?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "one": "واحد",
+     "two": "اثنان",
+     "three_to_five": "من ثلاثة إلى خمسة",
+     "more_than_five": "أكثر من خمسة",
+     "not_applicable": "لا توجد سلاسل بيانات"
+    },
+    "instructions": "كم عدد سلاسل البيانات المعروضة في الصورة؟"
+   },
+   "de": {
+    "criteria": {
+     "one": "eine",
+     "two": "zwei",
+     "three_to_five": "drei bis fünf",
+     "more_than_five": "mehr als fünf",
+     "not_applicable": "keine Datenreihen"
+    },
+    "instructions": "Wie viele Datenreihen werden angezeigt?"
+   }
+  }
+ },
+ "chart.orientation": {
+  "paraphrases": [
+   "In which direction are the bars or primary elements oriented?",
+   "What direction do the bars or main elements extend?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "vertical": "vertical",
+     "horizontal": "horizontal",
+     "not_applicable": "no aplicable"
+    },
+    "instructions": "¿En qué dirección están orientados o se extienden las barras o los elementos principales?"
+   },
+   "fr": {
+    "criteria": {
+     "vertical": "verticale",
+     "horizontal": "horizontale",
+     "not_applicable": "sans objet"
+    },
+    "instructions": "Dans quelle direction les barres ou les éléments principaux sont-ils orientés ?"
+   }
+  }
+ },
+ "chart.percentages": {
+  "paraphrases": [
+   "Are the numbers displayed as percentages?",
+   "Do the values appear in percentage form?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل القيم معروضةكنسب مئوية؟"
+   },
+   "de": {
+    "instructions": "Werden die Werte als Prozente angegeben?"
+   }
+  }
+ },
+ "chart.polish": {
+  "paraphrases": [
+   "How finished does the figure appear?",
+   "What level of visual polish does the figure have?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "boceto tosco",
+     "básico",
+     "pulido",
+     "calidad de publicación"
+    ],
+    "instructions": "¿Qué tan pulida está la figura?"
+   },
+   "fr": {
+    "criteria": [
+     "croquis grossier",
+     "basique",
+     "soigné",
+     "qualité de publication"
+    ],
+    "instructions": "Quel est le degré de finition de la figure ?"
+   }
+  }
+ },
+ "chart.purpose": {
+  "paraphrases": [
+   "What is this figure primarily used for?",
+   "What is the main purpose of the figure?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "compare": "مقارنة الفئات",
+     "trend": "إظهار التغيّر مع مرور الوقت",
+     "composition": "إظهار أجزاء الكل",
+     "relationship": "إظهار العلاقة بين المتغيرات",
+     "process": "إظهار الخطوات أو البنية",
+     "list": "سرد قيم البيانات"
+    },
+    "instructions": "ما الغرض الرئيسي لهذا الشكل؟"
+   },
+   "de": {
+    "criteria": {
+     "compare": "Kategorien vergleichen",
+     "trend": "Veränderungen im Zeitverlauf zeigen",
+     "composition": "Teile eines Ganzen zeigen",
+     "relationship": "Einen Zusammenhang zwischen Variablen zeigen",
+     "process": "Schritte oder Struktur zeigen",
+     "list": "Datenwerte auflisten"
+    },
+    "instructions": "Wofür wird die Abbildung hauptsächlich verwendet?"
+   }
+  }
+ },
+ "chart.readability": {
+  "paraphrases": [
+   "How easy is it to read the figure?",
+   "Is the figure easy to read?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "difícil de ler",
+     "parcialmente legível",
+     "legível",
+     "muito claro"
+    ],
+    "instructions": "Quão fácil é ler a figura?"
+   },
+   "zh": {
+    "criteria": [
+     "难以辨认",
+     "somewhat readable可读",
+     "清晰易读",
+     "非常清楚"
+    ],
+    "instructions": "这幅图看起来容易阅读吗？"
+   }
+  }
+ },
+ "chart.time_axis": {
+  "paraphrases": [
+   "Does either of the axes represent time, such as years, months, or specific dates?",
+   "Is one of the chart’s axes a time axis measured in years, months, or dates?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿Uno de los ejes representa el tiempo, como años, meses o fechas?"
+   },
+   "fr": {
+    "instructions": "L’un des axes représente-t-il le temps, par exemple les années, les mois ou les dates ?"
+   }
+  }
+ },
+ "chart.topic": {
+  "paraphrases": [
+   "What is this figure about?",
+   "What subject does the figure depict?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "finance_economy": "वित्त अर्थव्यवस्था",
+     "science": "विज्ञान",
+     "health": "स्वास्थ्य",
+     "demographics": "जनसंख्या, लोग, समाज",
+     "business_sales": "व्यवसाय बिक्री",
+     "technology": "प्रौद्योगिकी",
+     "sports": "खेल",
+     "other": "अन्य"
+    },
+    "instructions": "यह चित्र किस विषय के बारे में है?"
+   },
+   "ja": {
+    "criteria": {
+     "finance_economy": "金融経済",
+     "science": "科学",
+     "health": "健康",
+     "demographics": "人口、人々、社会",
+     "business_sales": "ビジネス、販売",
+     "technology": "テクノロジー",
+     "sports": "スポーツ",
+     "other": "その他"
+    },
+    "instructions": "この図は何についてのものですか？"
+   }
+  }
+ },
+ "chart.trend": {
+  "paraphrases": [
+   "What is the general direction of the main data series?",
+   "How does the main series change overall?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "increasing": "aumentando",
+     "decreasing": "disminuyendo",
+     "flat": "constante",
+     "fluctuating": "fluctuando",
+     "not_applicable": "sin tendencia"
+    },
+    "instructions": "¿Cuál es la tendencia general de la serie principal?"
+   },
+   "fr": {
+    "criteria": {
+     "increasing": "croissante",
+     "decreasing": "décroissante",
+     "flat": "plate",
+     "fluctuating": "fluctueuse",
+     "not_applicable": "aucune tendance"
+    },
+    "instructions": "Quelle est la tendance générale de la série principale ?"
+   }
+  }
+ },
+ "chart.truncated_axis": {
+  "paraphrases": [
+   "Does the value axis begin at a point other than zero?",
+   "Is the starting value of the value axis something other than zero?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या मान अक्ष शून्य के अलावा किसी अन्य मान से शुरू होता है?"
+   },
+   "ja": {
+    "instructions": "値軸は0以外の値から始まりますか？"
+   }
+  }
+ },
+ "chart.upward_trend": {
+  "paraphrases": [
+   "Do the main data series trend upward overall?",
+   "Does the primary data series exhibit an overall increase?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿La serie de datos principal muestra un aumento general?"
+   },
+   "fr": {
+    "instructions": "La série de données principale présente-t-elle une augmentation globale ?"
+   }
+  }
+ },
+ "chart.value_scale": {
+  "paraphrases": [
+   "What is the approximate magnitude of the values?",
+   "On what scale are the values measured?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "small": "unidades a centenas",
+     "thousands": "miles",
+     "millions_or_more": "millones o más",
+     "percentages": "porcentajes",
+     "not_shown": "no se muestran valores"
+    },
+    "instructions": "¿Qué magnitud tienen los valores?"
+   },
+   "fr": {
+    "criteria": {
+     "small": "dizaines à centaines de milliers",
+     "thousands": "milliers",
+     "millions_or_more": "millions ou plus",
+     "percentages": "pourcentages",
+     "not_shown": "aucune valeur affichée"
+    },
+    "instructions": "Quelle est l'amplitude des valeurs ?"
+   }
+  }
+ },
+ "chart.volatility": {
+  "paraphrases": [
+   "How much variation does the main series show?",
+   "What is the level of variability in the main series?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "suave o constante",
+     "variación leve",
+     "variable",
+     "muy volátil"
+    ],
+    "instructions": "¿Cuánto varía la serie principal?"
+   },
+   "fr": {
+    "criteria": [
+     "lissée ou constante",
+     "légère variation",
+     "variable",
+     "très volatile"
+    ],
+    "instructions": "À quel point la série principale varie-t-elle ?"
+   }
+  }
+ },
+ "document.action_needed": {
+  "paraphrases": [
+   "After receiving this document, what is the recipient most likely expected to do?",
+   "What action is the recipient most likely supposed to take in response to this document?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "sign": "يوقّعها",
+     "pay": "يدفع مبلغًا",
+     "reply": "يرد أو يرسل معلومات",
+     "file_away": "يحتفظ بها للسجلات",
+     "read_only": "يقرأها فقط"
+    },
+    "instructions": "ماذا يُتوقع من المستلم غالبًا أن يفعل بعد استلام هذه الوثيقة؟"
+   },
+   "de": {
+    "criteria": {
+     "sign": "es unterschreiben",
+     "pay": "einen Betrag zahlen",
+     "reply": "antworten oder Informationen senden",
+     "file_away": "es für die Unterlagen aufbewahren",
+     "read_only": "es lediglich lesen"
+    },
+    "instructions": "Was sollte der Empfänger nach Erhalt dieses Dokuments am wahrscheinlichsten tun?"
+   }
+  }
+ },
+ "document.audience": {
+  "paraphrases": [
+   "Who is the intended audience for this material?",
+   "Which group of people is this text meant for?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "general_public": "público em geral",
+     "customer": "um cliente",
+     "employee": "funcionários de uma organização",
+     "government": "um escritório governamental ou uma autoridade oficial",
+     "students": "estudantes ou aprendizes",
+     "specialists": "especialistas em uma área"
+    },
+    "instructions": "Quem é o leitor pretendido?"
+   },
+   "zh": {
+    "criteria": {
+     "general_public": "普通大众",
+     "customer": "客户",
+     "employee": "组织内部的员工",
+     "government": "政府办公室或官员",
+     "students": "学生或学习者",
+     "specialists": "某个领域的专家"
+    },
+    "instructions": "目标读者是谁？"
+   }
+  }
+ },
+ "document.completion_state": {
+  "paraphrases": [
+   "Has this document been completed?",
+   "Does this document contain completed entries?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "blank_template": "una plantilla vacía",
+     "partly_filled": "algunos campos completados",
+     "complete": "completado o terminado en su totalidad",
+     "not_applicable": "no es un documento que se pueda completar"
+    },
+    "instructions": "¿Está completado este documento?"
+   },
+   "fr": {
+    "criteria": {
+     "blank_template": "un modèle vide",
+     "partly_filled": "certains champs remplis",
+     "complete": "entièrement rempli ou terminé",
+     "not_applicable": "n’est pas un document à remplir"
+    },
+    "instructions": "Ce document est-il rempli ?"
+   }
+  }
+ },
+ "document.department": {
+  "paraphrases": [
+   "Which department is responsible for handling this document?",
+   "To which department should this document be referred?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "finance": "المدفوعات والفواتير والمحاسبة",
+     "legal": "العقود والامتثال والنزاعات",
+     "hr": "التوظيف والموظفون والمزايا",
+     "sales_marketing": "المبيعات والترويج والعملاء",
+     "technical": "الهندسة وتقنية المعلومات ومواصفات المنتجات",
+     "operations": "الخدمات اللوجستية والمنشآت والمشتريات",
+     "other": "لا شيء مما سبق"
+    },
+    "instructions": "أي قسم ينبغي أن يتولى معالجة هذه الوثيقة؟"
+   },
+   "de": {
+    "criteria": {
+     "finance": "Zahlungen, Rechnungen, Buchhaltung",
+     "legal": "Verträge, Compliance, Streitigkeiten",
+     "hr": "Personalrekrutierung, Mitarbeiter, Benefits",
+     "sales_marketing": "Vertrieb, Werbung, Kunden",
+     "technical": "Ingenieurwesen, IT, Produktspezifikationen",
+     "operations": "Logistik, Einrichtungen, Beschaffung",
+     "other": "keine der oben genannten Optionen"
+    },
+    "instructions": "Welche Abteilung sollte dieses Dokument bearbeiten?"
+   }
+  }
+ },
+ "document.doc_type": {
+  "paraphrases": [
+   "What kind of document is shown in the image?",
+   "Which category best describes the document in the image?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "letter": "رسالة أو نسخة مطبوعة من بريد إلكتروني",
+     "invoice": "فاتورة أو سند دفع",
+     "form": "نموذج يتضمن حقولًا",
+     "report": "تقرير أو مذكرة",
+     "article": "مقال أو صفحة من كتاب أو ورقة بحثية",
+     "resume": "سيرة ذاتية أو резوم",
+     "contract": "عقد أو اتفاقية",
+     "slide": "شريحة عرض تقديمي",
+     "manual": "تعليمات أو دليل",
+     "other": "لا شيء مما سبق"
+    },
+    "instructions": "ما نوع المستند الظاهر في الصورة؟"
+   },
+   "de": {
+    "criteria": {
+     "letter": "Brief oder Ausdruck einer E-Mail",
+     "invoice": "Rechnung oder Beleg",
+     "form": "Formular mit Feldern",
+     "report": "Bericht oder Memo",
+     "article": "Artikel, Buchseite oder wissenschaftliche Arbeit",
+     "resume": "Lebenslauf",
+     "contract": "Vertrag oder Vereinbarung",
+     "slide": "Präsentationsfolie",
+     "manual": "Anleitung oder Handbuch",
+     "other": "keine der oben genannten Optionen"
+    },
+    "instructions": "Welche Art von Dokument ist auf dem Bild zu sehen?"
+   }
+  }
+ },
+ "document.formality": {
+  "paraphrases": [
+   "How formal is this type of document?",
+   "Please identify the level of formality of the document."
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "informal",
+     "semi-formal",
+     "formal",
+     "legal o oficial"
+    ],
+    "instructions": "¿Qué tan formal es el documento?"
+   },
+   "fr": {
+    "criteria": [
+     "informel",
+     "semi-formel",
+     "formel",
+     "juridique ou officiel"
+    ],
+    "instructions": "Dans quelle mesure le document est-il formel ?"
+   }
+  }
+ },
+ "document.handwritten": {
+  "paraphrases": [
+   "Is the majority of the text handwritten?",
+   "Does most of the writing appear to be handwritten?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل معظم النص مكتوب بخط اليد؟"
+   },
+   "de": {
+    "instructions": "Ist der größte Teil des Textes handschriftlich?"
+   }
+  }
+ },
+ "document.has_amount": {
+  "paraphrases": [
+   "Does the document include any monetary amount?",
+   "Is a specific sum of money mentioned in the document?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या दस्तावेज़ में कोई मौद्रिक राशि बताई गई है?"
+   },
+   "ja": {
+    "instructions": "この文書には金額提到されていますか？"
+   }
+  }
+ },
+ "document.has_contact": {
+  "paraphrases": [
+   "Does the document contain any contact information, such as an email address, phone number, or physical address?",
+   "Are any contact details included in the document—for example, an email, a phone number, or an address?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "O documento inclui informações de contato, como um e-mail, número de telefone ou endereço?"
+   },
+   "zh": {
+    "instructions": "文档中是否包含联系信息，例如电子邮件地址、电话号码或地址？"
+   }
+  }
+ },
+ "document.has_date": {
+  "paraphrases": [
+   "Does the document display a date?",
+   "Is any date shown in the document?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या दस्तावेज़ में कोई तिथि दिखाई देती है?"
+   },
+   "ja": {
+    "instructions": "文書には日付が表示されていますか？"
+   }
+  }
+ },
+ "document.has_logo": {
+  "paraphrases": [
+   "Does the image contain a logo or a letterhead?",
+   "Is a logo or letterhead visible in the image?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "A imagem contém um logotipo ou um cabeçalho?"
+   },
+   "zh": {
+    "instructions": "图像中是否有标志或信笺抬头？"
+   }
+  }
+ },
+ "document.has_personal_data": {
+  "paraphrases": [
+   "Does the document include personal data identifying a particular individual, such as a name alongside an address, an identification number, or a date of birth?",
+   "Is the document’s content made up of personal details about a specific person, including but not limited to a name and address, an ID number, or a date of birth?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿El documento contiene datos personales sobre una persona específica, como un nombre junto con una dirección, un número de identificación o una fecha de nacimiento?"
+   },
+   "fr": {
+    "instructions": "Le document contient-il des données personnelles concernant une personne précise, telles qu’un nom associé à une adresse, un numéro d’identification ou une date de naissance ?"
+   }
+  }
+ },
+ "document.has_signature": {
+  "paraphrases": [
+   "Is there a signature or a designated line for a signature in the document?",
+   "Does the document include a signature or a line where a signature should be placed?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل تحتوي الوثيقة على توقيع أو خط مخصص للتوقيع؟"
+   },
+   "de": {
+    "instructions": "Enthält das Dokument eine Unterschrift oder eine Unterschriftslinie?"
+   }
+  }
+ },
+ "document.has_table": {
+  "paraphrases": [
+   "Is there a table in the document?",
+   "Does the document include any tables?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿El documento contiene una tabla?"
+   },
+   "fr": {
+    "instructions": "Le document contient-il un tableau ?"
+   }
+  }
+ },
+ "document.has_title": {
+  "paraphrases": [
+   "Is there a clearly visible title at the top of the document?",
+   "Does the document feature an obvious title positioned at its top?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "O documento tem um título claro no topo?"
+   },
+   "zh": {
+    "instructions": "文档顶部是否有清晰的标题？"
+   }
+  }
+ },
+ "document.is_official": {
+  "paraphrases": [
+   "Does this appear to be an official, lawful, or government document?",
+   "Would you classify this as an official, legal, or government-issued document?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل يبدو هذا وثيقة رسمية أو قانونية أو حكومية؟"
+   },
+   "de": {
+    "instructions": "Sieht dies wie ein offizielles, rechtliches oder staatliches Dokument aus?"
+   }
+  }
+ },
+ "document.language": {
+  "paraphrases": [
+   "Which language is primarily used in the document?",
+   "What is the primary language of the text in the document?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "english": "inglés",
+     "spanish": "español",
+     "french": "francés",
+     "german": "alemán",
+     "chinese": "chino",
+     "japanese": "japonés",
+     "arabic": "árabe",
+     "hindi": "hindi",
+     "other": "otro idioma o sin texto"
+    },
+    "instructions": "¿Cuál es el idioma principal del documento?"
+   },
+   "fr": {
+    "criteria": {
+     "english": "anglais",
+     "spanish": "espagnol",
+     "french": "français",
+     "german": "allemand",
+     "chinese": "chinois",
+     "japanese": "japonais",
+     "arabic": "arabe",
+     "hindi": "hindi",
+     "other": "une autre langue ou aucun texte"
+    },
+    "instructions": "Quelle est la langue principale du document ?"
+   }
+  }
+ },
+ "document.layout": {
+  "paraphrases": [
+   "What is the structure of the document?",
+   "How is the document organized?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "plain_text": "principalmente párrafos de texto",
+     "table_heavy": "principalmente tablas",
+     "form_fields": "campos etiquetados para completar",
+     "mixed": "texto mezclado con imágenes o gráficos",
+     "slide": "diapositiva con viñetas e imágenes"
+    },
+    "instructions": "¿Cómo está dispuesto el documento?"
+   },
+   "fr": {
+    "criteria": {
+     "plain_text": "principalement des paragraphes de texte",
+     "table_heavy": "principalement des tableaux",
+     "form_fields": "champs étiquetés à remplir",
+     "mixed": "texte mélangé à des images ou des graphiques",
+     "slide": "diapositive avec des puces et des visuels"
+    },
+    "instructions": "Comment le document est-il mis en page ?"
+   }
+  }
+ },
+ "document.legibility": {
+  "paraphrases": [
+   "How clear and easy to read is the text?",
+   "To what extent can the text be read clearly?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "ilegível",
+     "difícil de ler",
+     "legível com algum esforço",
+     "perfeitamente claro"
+    ],
+    "instructions": "Quão legível é o texto?"
+   },
+   "zh": {
+    "criteria": [
+     "无法辨认",
+     "难以辨认",
+     "需要费力才能辨认",
+     "非常清晰"
+    ],
+    "instructions": "文本的清晰易读程度如何？"
+   }
+  }
+ },
+ "document.multi_column": {
+  "paraphrases": [
+   "Is the text arranged in two or more columns?",
+   "Does the text appear in at least two columns?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या टेक्स्ट दो या दो से अधिक कॉलमों में व्यवस्थित है?"
+   },
+   "ja": {
+    "instructions": "テキストは2列以上の段組みで配置されていますか？"
+   }
+  }
+ },
+ "document.non_english": {
+  "paraphrases": [
+   "Does the main text use a language other than English?",
+   "Is the primary text written in a language besides English?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿El texto principal está escrito en un idioma distinto del inglés?"
+   },
+   "fr": {
+    "instructions": "Le texte principal est-il rédigé dans une langue autre que l’anglais ?"
+   }
+  }
+ },
+ "document.purpose": {
+  "paraphrases": [
+   "What is the primary purpose of this document?",
+   "Why was this document created?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "inform": "जानकारी साझा करना",
+     "request_action": "पाठक से कुछ करने के लिए कहना",
+     "record_transaction": "किसी खरीद, भुगतान या लेन-देन को दर्ज करना",
+     "legal_agreement": "कानूनी शर्तें तय करना",
+     "marketing": "प्रचार करना या बेचना",
+     "education": "सिखाना या समझाना"
+    },
+    "instructions": "इस दस्तावेज़ का मुख्य उद्देश्य क्या है?"
+   },
+   "ja": {
+    "criteria": {
+     "inform": "情報を共有する",
+     "request_action": "読者に行動Healthyを求める",
+     "record_transaction": "購入、支払い、または取引を記録する",
+     "legal_agreement": "法的条件を定める",
+     "marketing": "宣伝または売却する",
+     "education": "教えたり説明したりする"
+    },
+    "instructions": "この文書の主な目的は何ですか？"
+   }
+  }
+ },
+ "document.scan_quality": {
+  "paraphrases": [
+   "How would you rate the image quality of the page?",
+   "What is the overall image quality of this page?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "muy poor: borrosa, oscura o muy recortada",
+     "poor but usable",
+     "good",
+     "excelente: nítida y bien iluminada"
+    ],
+    "instructions": "¿Qué tan buena es la calidad de imagen de la página?"
+   },
+   "fr": {
+    "criteria": [
+     "très poor : floue, sombre ou fortement recadrée",
+     "poor but usable",
+     "good",
+     "excellent : nette et bien éclairée"
+    ],
+    "instructions": "Quelle est la qualité de l’image de la page ?"
+   }
+  }
+ },
+ "document.sensitivity": {
+  "paraphrases": [
+   "What is the sensitivity level of the information contained in the document?",
+   "How sensitive is the data shown in the document?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "público",
+     "interno",
+     "confidencial",
+     "dados pessoais ou financeiros altamente sensíveis"
+    ],
+    "instructions": "Qual é o nível de sensibilidade das informações contidas no documento?"
+   },
+   "zh": {
+    "criteria": [
+     "公开",
+     "内部",
+     "机密",
+     "高度敏感的个人或财务数据"
+    ],
+    "instructions": "文件中的信息有多敏感？"
+   }
+  }
+ },
+ "document.structure": {
+  "paraphrases": [
+   "How well organized is the document?",
+   "What level of structure does the document have?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "غير منظم",
+     "يحتوي على بعض العناوين",
+     "منظم جيدًا",
+     "منظم بدرجة عالية مع أقسام مرقمة"
+    ],
+    "instructions": "إلى أي مدى يكون المستند منظمًا؟"
+   },
+   "de": {
+    "criteria": [
+     "unstrukturiert",
+     "einige Überschriften",
+     "gut strukturiert",
+     "hochstrukturiert mit nummerierten Abschnitten"
+    ],
+    "instructions": "Wie gut strukturiert ist das Dokument?"
+   }
+  }
+ },
+ "document.technicality": {
+  "paraphrases": [
+   "How technical is the material?",
+   "What level of technical expertise does the content require?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": [
+     "एक सामान्य दर्शक के लिए",
+     "कुछ तकनीकी शब्दावली",
+     "तकनीकी",
+     "केवल विशेषज्ञों के लिए"
+    ],
+    "instructions": "सामग्री कितनी तकनीकी है?"
+   },
+   "ja": {
+    "criteria": [
+     "一般層向け",
+     "専門用語を一部使う",
+     "技術的",
+     "専門家のみ"
+    ],
+    "instructions": "この内容はどれくらい技術的なですか？"
+   }
+  }
+ },
+ "document.text_density": {
+  "paraphrases": [
+   "How much written content is on the page?",
+   "What amount of text appears on the page?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": [
+     "लगभग कोई सामग्री नहीं",
+     "हल्का",
+     "मध्यम",
+     "बहुत अधिक"
+    ],
+    "instructions": "पृष्ठ पर कितना टेक्स्ट है?"
+   },
+   "ja": {
+    "criteria": [
+     "ほぼ内容がない",
+     "少ない",
+     "中間程度",
+     "非常に多い"
+    ],
+    "instructions": "ページにはどのくらいのテキストがありますか？"
+   }
+  }
+ },
+ "document.tone": {
+  "paraphrases": [
+   "What tone does the document have?",
+   "How would you describe the tone of the document?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "formal": "औपचारिक",
+     "neutral": "तटस्थ",
+     "friendly": "मित्रवत",
+     "urgent": "अत्यावश्यक",
+     "promotional": "प्रचारात्मक"
+    },
+    "instructions": "दस्तावेज़ का स्वर कैसा है?"
+   },
+   "ja": {
+    "criteria": {
+     "formal": "形式的な",
+     "neutral": "中立的な",
+     "friendly": "親切な",
+     "urgent": "緊急の",
+     "promotional": "宣伝的な"
+    },
+    "instructions": "この文書にはどのようなペル_INTERACTIONPresenter3ieneがありますか？"
+   }
+  }
+ },
+ "document.topic": {
+  "paraphrases": [
+   "What is the subject matter of the document?",
+   "What topic does the document cover?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "business": "negócios",
+     "science_technology": "ciência e tecnologia",
+     "health": "saúde",
+     "education": "educação",
+     "government_law": "governo e lei",
+     "personal": "assuntos pessoais",
+     "other": "outros"
+    },
+    "instructions": "Sobre o que trata o documento?"
+   },
+   "zh": {
+    "criteria": {
+     "business": "商业",
+     "science_technology": "科学技术",
+     "health": "健康",
+     "education": "教育",
+     "government_law": "政府法律",
+     "personal": "个人事务",
+     "other": "其他"
+    },
+    "instructions": "这份文档的主题是什么？"
+   }
+  }
+ },
+ "document.urgency": {
+  "paraphrases": [
+   "How urgent does this document seem?",
+   "What level of urgency does this document convey?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "لا توجد حالة طارئة",
+     "منخفضة",
+     "متوسطة",
+     "عالية، يلزم اتخاذ إجراء الآن"
+    ],
+    "instructions": "ما مدى الطارئة التي يبدو عليها هذا المستند؟"
+   },
+   "de": {
+    "criteria": [
+     "keine Dringlichkeit",
+     "niedrig",
+     "mittel",
+     "hoch, sofortiges Handeln erforderlich"
+    ],
+    "instructions": "Wie dringend wirkt dieses Dokument?"
+   }
+  }
+ },
+ "meme.animal_subject": {
+  "paraphrases": [
+   "Is an animal the primary subject?",
+   "Does the image focus mainly on an animal?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "Um animal é o assunto principal?"
+   },
+   "zh": {
+    "instructions": "动物是主要主题吗？"
+   }
+  }
+ },
+ "meme.audience": {
+  "paraphrases": [
+   "Who is the intended audience for the post?",
+   "Which group of people is the post intended for?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "general": "público general",
+     "young_adults": "jóvenes adultos",
+     "professionals": "profesionales",
+     "niche_community": "aficionados a un tema específico"
+    },
+    "instructions": "¿A quién va dirigido el mensaje?"
+   },
+   "fr": {
+    "criteria": {
+     "general": "grand public",
+     "young_adults": "jeunes adultes",
+     "professionals": "professionnels",
+     "niche_community": "passionnés d'un sujet précis"
+    },
+    "instructions": "À qui la publication s'adresse-t-elle ?"
+   }
+  }
+ },
+ "meme.call_to_action": {
+  "paraphrases": [
+   "Does the image ask viewers to take an action, such as sharing, buying, voting, or clicking?",
+   "Are viewers being asked to perform an action, including sharing, purchasing, voting, or clicking?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿Se les pide a los espectadores que hagan algo, como compartir, comprar, votar o hacer clic?"
+   },
+   "fr": {
+    "instructions": "L’image demande-t-elle aux spectateurs de faire quelque chose, par exemple partager, acheter, voter ou cliquer ?"
+   }
+  }
+ },
+ "meme.caption_position": {
+  "paraphrases": [
+   "What is the position of the text?",
+   "In which area is the text located?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "top": "ऊपर",
+     "bottom": "नीचे",
+     "top_and_bottom": "ऊपर और नीचे",
+     "middle": "बीच में",
+     "none": "कोई टेक्स्ट नहीं"
+    },
+    "instructions": "टेक्स्ट कहाँ रखा गया है?"
+   },
+   "ja": {
+    "criteria": {
+     "top": "上",
+     "bottom": "下",
+     "top_and_bottom": "上下",
+     "middle": "中央",
+     "none": "テキストなし"
+    },
+    "instructions": "テキストはどこに配置されていますか？"
+   }
+  }
+ },
+ "meme.emotion": {
+  "paraphrases": [
+   "What emotion is primarily being conveyed?",
+   "Which feeling does it mainly show?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "joy": "alegría",
+     "anger": "ira",
+     "sadness": "tristeza",
+     "surprise": "sorpresa",
+     "fear": "miedo",
+     "disgust": "asco",
+     "neutral": "neutralidad"
+    },
+    "instructions": "¿Qué emoción expresa principalmente?"
+   },
+   "fr": {
+    "criteria": {
+     "joy": "joie",
+     "anger": "colère",
+     "sadness": "tristesse",
+     "surprise": "surprise",
+     "fear": "peur",
+     "disgust": "dégoût",
+     "neutral": "neutralité"
+    },
+    "instructions": "Quelle émotion exprime-t-elle principalement ?"
+   }
+  }
+ },
+ "meme.factual_claim": {
+  "paraphrases": [
+   "Could the statement be a factual claim that risks misleading viewers?",
+   "Is a potentially misleading factual assertion being made?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या यह एक तथ्यात्मक दावा है जो भ्रामक हो सकता है?"
+   },
+   "ja": {
+    "instructions": "それは、誤解を招く可能性のある事実の主張ですか？"
+   }
+  }
+ },
+ "meme.format": {
+  "paraphrases": [
+   "Which option best describes the format of this image?",
+   "How is this image formatted?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "classic_meme": "صورة تتضمن نصًا توضيحيًا",
+     "social_post": "منشور على وسائل التواصل الاجتماعي",
+     "quote_card": "اقتباس على خلفية",
+     "comic": "لوحة comic أو متعددة الألواح",
+     "photo_only": "صورة بدون نص"
+    },
+    "instructions": "ما تنسيق هذه الصورة؟"
+   },
+   "de": {
+    "criteria": {
+     "classic_meme": "Bild mit Bildunterschrift",
+     "social_post": "Beitrag in sozialen Medien",
+     "quote_card": "Zitat auf einem Hintergrund",
+     "comic": "Comic oder mehrere Panels",
+     "photo_only": "Foto ohne Text"
+    },
+    "instructions": "Welches Format hat dies?"
+   }
+  }
+ },
+ "meme.funniness": {
+  "paraphrases": [
+   "How funny is it?",
+   "Just how funny is it?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "não é engraçado",
+     "um pouco engraçado",
+     "engraçado",
+     "muito engraçado"
+    ],
+    "instructions": "Quão engraçado é?"
+   },
+   "zh": {
+    "criteria": [
+     "不好笑",
+     "有点好笑",
+     "好笑",
+     "非常好笑"
+    ],
+    "instructions": "它有多搞笑？"
+   }
+  }
+ },
+ "meme.has_caption": {
+  "paraphrases": [
+   "Is there any text overlaid on the image?",
+   "Does the image contain overlaid text?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل توجد كتابة مطبقة فوق الصورة؟"
+   },
+   "de": {
+    "instructions": "Ist Text über das Bild gelegt?"
+   }
+  }
+ },
+ "meme.humor_type": {
+  "paraphrases": [
+   "What type of humour is employed here?",
+   "Which style of humour is being used in this image?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "absurd": "अ absurd",
+     "relatable": "रोज़मर्रा की परिस्थितियाँ",
+     "sarcasm": "व्यंग्य",
+     "wordplay": "शब्दों पर खेल",
+     "dark": "काला हास्य",
+     "not_humorous": "हास्य नहीं"
+    },
+    "instructions": "यहाँ किस प्रकार का हास्य अपनाया गया है?"
+   },
+   "ja": {
+    "criteria": {
+     "absurd": "absurd",
+     "relatable": "everyday situations",
+     "sarcasm": "sarcasm",
+     "wordplay": "wordplay",
+     "dark": "dark humour",
+     "not_humorous": "not humorous"
+    },
+    "instructions": "ここではどんな種類のユーモアが使われていますか？"
+   }
+  }
+ },
+ "meme.humorous": {
+  "paraphrases": [
+   "Is this post meant to be humorous?",
+   "Was this post created with the intention of being funny?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿La publicación está destinada a ser divertida?"
+   },
+   "fr": {
+    "instructions": "La publication est-elle destinée à être drôle ?"
+   }
+  }
+ },
+ "meme.intent": {
+  "paraphrases": [
+   "What is the primary purpose of the post?",
+   "What is the post mainly intended to do?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "entertain": "ترفيه",
+     "persuade": "إقناع",
+     "inform": "إعلام",
+     "advertise": "إعلان",
+     "insult": "إهانة"
+    },
+    "instructions": "ما الغرض الرئيسي للمنشور؟"
+   },
+   "de": {
+    "criteria": {
+     "entertain": "unterhalten",
+     "persuade": "überzeugen",
+     "inform": "informieren",
+     "advertise": "werben",
+     "insult": "beleidigen"
+    },
+    "instructions": "Was ist die Hauptabsicht des Beitrags?"
+   }
+  }
+ },
+ "meme.language": {
+  "paraphrases": [
+   "Which language is the text written in?",
+   "What language is used in the text?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "english": "inglês",
+     "spanish": "espanhol",
+     "hindi": "hindi",
+     "portuguese": "português",
+     "other": "outro",
+     "no_text": "sem texto"
+    },
+    "instructions": "Em que linguagem está escrito o texto?"
+   },
+   "zh": {
+    "criteria": {
+     "english": "英语",
+     "spanish": "西班牙语",
+     "hindi": "印地语",
+     "portuguese": "葡萄牙语",
+     "other": "其他",
+     "no_text": "没有文字"
+    },
+    "instructions": "文本使用的是哪种语言？"
+   }
+  }
+ },
+ "meme.moderation": {
+  "paraphrases": [
+   "What action should a content moderator take regarding this post?",
+   "How should a content moderator handle this post?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "allow": "correcto para todos",
+     "allow_with_warning": "correcto, pero sensible",
+     "review": "requiere revisión humana",
+     "remove": "incumple las reglas de contenido habituales"
+    },
+    "instructions": "¿Qué debería hacer un moderador de contenido con esta publicación?"
+   },
+   "fr": {
+    "criteria": {
+     "allow": "conforme pour tous",
+     "allow_with_warning": "conforme mais sensible",
+     "review": "nécessite une vérification humaine",
+     "remove": "enfreint les règles habituelles relatives au contenu"
+    },
+    "instructions": "Que devrait faire un modérateur de contenu avec cette publication ?"
+   }
+  }
+ },
+ "meme.originality": {
+  "paraphrases": [
+   "How original is this?",
+   "What degree of originality does it have?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "plantilla genérica",
+     "común",
+     "creativo",
+     "muy original"
+    ],
+    "instructions": "¿Qué tan original es?"
+   },
+   "fr": {
+    "criteria": [
+     "modèle générique",
+     "commun",
+     "créatif",
+     "très original"
+    ],
+    "instructions": "Dans quelle mesure est-ce original ?"
+   }
+  }
+ },
+ "meme.political": {
+  "paraphrases": [
+   "Is this post related to politics?",
+   "Does the post concern political matters?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل المنشور يتعلق بالسياسة؟"
+   },
+   "de": {
+    "instructions": "Geht es in dem Beitrag um Politik?"
+   }
+  }
+ },
+ "meme.political_intensity": {
+  "paraphrases": [
+   "How much political content does it contain?",
+   "To what extent is it politically charged?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "لا شيء",
+     "خفيف",
+     "قوي",
+     "شديد"
+    ],
+    "instructions": "إلى أي مدى يحتوي على محتوى سياسي؟"
+   },
+   "de": {
+    "criteria": [
+     "keine",
+     "mild",
+     "stark",
+     "extrem"
+    ],
+    "instructions": "Wie stark ist es politisch aufgeladen?"
+   }
+  }
+ },
+ "meme.profanity": {
+  "paraphrases": [
+   "Is profanity present in the text?",
+   "Does the text include any swear words?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل يحتوي النص على شتائم؟"
+   },
+   "de": {
+    "instructions": "Enthält der Text Obszönitäten?"
+   }
+  }
+ },
+ "meme.promotional": {
+  "paraphrases": [
+   "Is the image promoting a product or service?",
+   "Does this advertisement offer a product or service?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿La imagen está anunciando un producto o servicio?"
+   },
+   "fr": {
+    "instructions": "L’image fait-elle de la publicité pour un produit ou un service ?"
+   }
+  }
+ },
+ "meme.readability": {
+  "paraphrases": [
+   "How easy is it to read the text?",
+   "How clear is the text?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "ilegível",
+     "difícil de ler",
+     "legível com algum esforço",
+     "perfeitamente claro"
+    ],
+    "instructions": "Quão fácil é ler o texto?"
+   },
+   "zh": {
+    "criteria": [
+     "无法辨认",
+     "难以阅读",
+     "需要稍加努力才能看清",
+     "非常清晰"
+    ],
+    "instructions": "这段文字有多容易阅读？"
+   }
+  }
+ },
+ "meme.sarcastic": {
+  "paraphrases": [
+   "Is the message meant sarcastically or ironically?",
+   "Does the message convey sarcasm or irony?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "A mensagem é sarcástica ou irônica?"
+   },
+   "zh": {
+    "instructions": "这条信息是在表达讽刺，还是反讽？"
+   }
+  }
+ },
+ "meme.sensitivity": {
+  "paraphrases": [
+   "How appropriate is this for a general audience?",
+   "Would this be suitable for viewing by a broad general audience?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": [
+     "सबके लिए सुरक्षित",
+     "हल्का संवेदनशील",
+     "संवेदनशील",
+     "कार्यस्थल पर दिखाने योग्य नहीं"
+    ],
+    "instructions": "यह सामान्य दर्शकों के लिए कितना उपयुक्त है?"
+   },
+   "ja": {
+    "criteria": [
+     "everyone's safe",
+     "mildly sensitive",
+     "sensitive",
+     "not safe for work"
+    ],
+    "instructions": "これは一般の視聴者にどのくらい適切ですか？"
+   }
+  }
+ },
+ "meme.sentiment": {
+  "paraphrases": [
+   "What sentiment does the image convey overall?",
+   "How would you describe the overall mood or sentiment of the image?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "positive": "إيجابي",
+     "negative": "سلبي",
+     "neutral": "محايد",
+     "mixed": "مختلط"
+    },
+    "instructions": "ما هو الانطباع العام الذي ينقله الصورة؟"
+   },
+   "de": {
+    "criteria": {
+     "positive": "positiv",
+     "negative": "negativ",
+     "neutral": "neutral",
+     "mixed": "gemischt"
+    },
+    "instructions": "Welche Gesamtwirkung oder Stimmung vermittelt das Bild?"
+   }
+  }
+ },
+ "meme.shareability": {
+  "paraphrases": [
+   "How likely are people to share it?",
+   "How probable is it that people will share it?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "غير مرجح",
+     "إلى حد ما",
+     "مرجح",
+     "مرجح جدًا"
+    ],
+    "instructions": "ما مدى احتمال أن يشاركه الناس؟"
+   },
+   "de": {
+    "criteria": [
+     "unwahrscheinlich",
+     "etwas",
+     "wahrscheinlich",
+     "sehr wahrscheinlich"
+    ],
+    "instructions": "Wie wahrscheinlich ist es, dass die Leute es teilen?"
+   }
+  }
+ },
+ "meme.targets_person": {
+  "paraphrases": [
+   "Is a particular person being mocked or targeted?",
+   "Does the content make fun of or criticize a specific individual?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "A imagem zomba ou tem como alvo uma pessoa específica?"
+   },
+   "zh": {
+    "instructions": "这张图是否在嘲弄或针对某个特定的人？"
+   }
+  }
+ },
+ "meme.text_image_fit": {
+  "paraphrases": [
+   "How closely does the wording correspond to the image?",
+   "How appropriate is the text as a description of the image?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "no relacionado",
+     "relacionado de manera general",
+     "relacionado",
+     "coincidencia perfecta"
+    ],
+    "instructions": "¿Qué tan bien se ajusta el texto a la imagen?"
+   },
+   "fr": {
+    "criteria": [
+     "sans rapport",
+     "vaguement lié",
+     "lié",
+     "parfaitement correspondant"
+    ],
+    "instructions": "Dans quelle mesure le texte correspond-il à l’image ?"
+   }
+  }
+ },
+ "meme.text_matches_image": {
+  "paraphrases": [
+   "Is the text related to the content of the image?",
+   "Does the text have a connection to what is depicted in the image?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या टेक्स्ट उस चीज़ से संबंधित है जो इमेज में दिखायी गई है?"
+   },
+   "ja": {
+    "instructions": "テキストは画像に写っているものと関連していますか？"
+   }
+  }
+ },
+ "meme.topic": {
+  "paraphrases": [
+   "What topic does the post discuss?",
+   "Which subject is the post about?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "work_school": "escola e trabalho",
+     "relationships": "relacionamentos",
+     "animals": "animais",
+     "food": "comida",
+     "technology": "tecnologia",
+     "politics": "política",
+     "sports": "esportes",
+     "everyday_life": "vida cotidiana",
+     "other": "outro"
+    },
+    "instructions": "Em qual assunto a publicação é sobre?"
+   },
+   "zh": {
+    "criteria": {
+     "work_school": "工作与学习",
+     "relationships": "人际关系",
+     "animals": "动物",
+     "food": "食物",
+     "technology": "科技",
+     "politics": "政治",
+     "sports": "体育",
+     "everyday_life": "日常生活",
+     "other": "其他"
+    },
+    "instructions": "这篇帖子是关于什么主题的？"
+   }
+  }
+ },
+ "photo.activity": {
+  "paraphrases": [
+   "What activity are the people primarily engaged in?",
+   "What are the people chiefly doing in the image?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "eating": "खाना या पीना",
+     "working": "काम करना या पढ़ाई करना",
+     "playing_sport": "खेलना या व्यायाम करना",
+     "traveling": "यात्रा करना या आना-जाना",
+     "relaxing": "आराम करना, तस्वीर के लिए पोज़ देना या सामाजिक समय बिताना",
+     "shopping": "खरीदारी करना",
+     "no_people": "इमेज में कोई व्यक्ति नहीं है"
+    },
+    "instructions": "इमेज में लोग मुख्य रूप से क्या कर रहे हैं?"
+   },
+   "ja": {
+    "criteria": {
+     "eating": "食事または飲み物をしている",
+     "working": "spectacle仕事または勉強をしている",
+     "playing_sport": "スポーツまたは運動をしている",
+     "traveling": "旅行または通勤をしている",
+     "relaxing": "休んでいる、ポーズをとっている、または社交をしている",
+     "shopping": "買い物をしている",
+     "no_people": "画像には人がいない"
+    },
+    "instructions": "画像里的人たちは主に何をしていますか？"
+   }
+  }
+ },
+ "photo.animal_present": {
+  "paraphrases": [
+   "Does the image contain an animal?",
+   "Can an animal be seen in the image?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿Hay un animal en la imagen?"
+   },
+   "fr": {
+    "instructions": "Y a-t-il un animal dans l’image ?"
+   }
+  }
+ },
+ "photo.animal_type": {
+  "paraphrases": [
+   "What kind of animal is shown in the image?",
+   "Which animal can be seen in the picture?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "dog": "كلب",
+     "cat": "قطة",
+     "bird": "طائر",
+     "horse": "حصان",
+     "farm_animal": "بقرة أو خروف أو خنزير أو ماعز",
+     "wild_animal": "فيل أو زرافة أو حمار وحشي أو دب أو حيوان بري آخر",
+     "none": "لا يوجد حيوان"
+    },
+    "instructions": "أي حيوان يظهر في الصورة؟"
+   },
+   "de": {
+    "criteria": {
+     "dog": "Hund",
+     "cat": "Katze",
+     "bird": "Vogel",
+     "horse": "Pferd",
+     "farm_animal": "Kuh, Schaf, Schwein oder Ziege",
+     "wild_animal": "Elefant, Giraffe, Zebra, Bär oder ein anderes wildes Tier",
+     "none": "kein Tier"
+    },
+    "instructions": "Welches Tier ist auf dem Bild zu sehen?"
+   }
+  }
+ },
+ "photo.closeness": {
+  "paraphrases": [
+   "What is the camera’s distance from the main subject?",
+   "How near is the main subject to the camera?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "بعيد جدًا، رؤية واسعة",
+     "مسافة متوسطة",
+     "قريب",
+     "لقطة قريبة جدًا"
+    ],
+    "instructions": "ما مدى ابتعاد الكاميرا عن الموضوع الرئيسي؟"
+   },
+   "de": {
+    "criteria": [
+     "weit weg, weite Ansicht",
+     "mittlere Entfernung",
+     "nah",
+     "extreme Nahaufnahme"
+    ],
+    "instructions": "Wie nah ist die Kamera am Hauptmotiv?"
+   }
+  }
+ },
+ "photo.clutter": {
+  "paraphrases": [
+   "How busy or cluttered does the scene appear?",
+   "What level of busyness or clutter is present in the scene?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": [
+     "बहुत सरल, एक स्पष्ट विषय",
+     "कुछ वस्तुएँ",
+     "व्यस्त दृश्य",
+     "बहुत भीड़ा या अस्तव्यस्त"
+    ],
+    "instructions": "दृश्य कितना व्यस्त या अस्तव्यस्त दिखाई देता है?"
+   },
+   "ja": {
+    "criteria": [
+     "非常に単純で、明確な被写体が1つ",
+     "いくつかのオブジェクト",
+     "賑やかなシーン",
+     "非常に混み合っており散らかったシーン"
+    ],
+    "instructions": "シーンはどれくらい賑やか、または散らかっていますか？"
+   }
+  }
+ },
+ "photo.crowd_density": {
+  "paraphrases": [
+   "How many individuals are visible in the scene?",
+   "What is the number of people shown in the scene?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "no hay personas",
+     "unas pocas personas",
+     "muchas personas",
+     "una multitud apiñada"
+    ],
+    "instructions": "¿Cuántas personas hay en la escena?"
+   },
+   "fr": {
+    "criteria": [
+     "aucune personne",
+     "quelques personnes",
+     "beaucoup de personnes",
+     "une foule compacte"
+    ],
+    "instructions": "Combien de personnes y a-t-il dans la scène ?"
+   }
+  }
+ },
+ "photo.dominant_color": {
+  "paraphrases": [
+   "What is the predominant colour in the image?",
+   "Which colour is most prevalent throughout the image?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "red": "أحمر",
+     "orange_or_yellow": "برتقالي أو أصفر",
+     "green": "أخضر",
+     "blue": "أزرق",
+     "brown": "بني",
+     "black_or_grey": "أسود أو رمادي",
+     "white": "أبيض",
+     "multicolor": "لا يوجد لون مهيمن واحد"
+    },
+    "instructions": "ما هو اللون الغالب في الصورة؟"
+   },
+   "de": {
+    "criteria": {
+     "red": "Rot",
+     "orange_or_yellow": "Orange oder Gelb",
+     "green": "Grün",
+     "blue": "Blau",
+     "brown": "Braun",
+     "black_or_grey": "Schwarz oder Grau",
+     "white": "Weiß",
+     "multicolor": "Keine einzelne dominante Farbe"
+    },
+    "instructions": "Welche Farbe dominiert das Bild?"
+   }
+  }
+ },
+ "photo.food_present": {
+  "paraphrases": [
+   "Can any food be seen in the image?",
+   "Is there any food visible in the picture?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل Investigator maroon?"
+   },
+   "de": {
+    "instructions": "Ist im Bild Nahrung sichtbar?"
+   }
+  }
+ },
+ "photo.formality": {
+  "paraphrases": [
+   "Which option best describes how formal the occasion or setting is?",
+   "How would you characterize the level of formality of the occasion or setting?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": [
+     "बहुत अनौपचारिक",
+     "अनौपचारिक",
+     "स्मार्ट",
+     "औपचारिक कार्यक्रम"
+    ],
+    "instructions": "अवसर या सेटिंग कितनी औपचारिक है?"
+   },
+   "ja": {
+    "criteria": [
+     "非常にカジュアル",
+     "カジュアル",
+     "スマート",
+     "正式なイベント"
+    ],
+    "instructions": "occasionsや環境は、どのくらい格式ばっているか。"
+   }
+  }
+ },
+ "photo.group_of_people": {
+  "paraphrases": [
+   "Can at least three people be seen in the image?",
+   "Are three or more individuals visible in the picture?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل يمكن رؤية ثلاثة أشخاص أو أكثر في الصورة؟"
+   },
+   "de": {
+    "instructions": "Sind in dem Bild drei oder mehr Menschen zu sehen?"
+   }
+  }
+ },
+ "photo.image_quality": {
+  "paraphrases": [
+   "How high is the technical quality of the photo?",
+   "What is the technical quality of the photo?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "muito ruim: desfocada, escura ou muito recortada",
+     "ruim, mas utilizável",
+     "boa",
+     "excelente: nítida e bem iluminada"
+    ],
+    "instructions": "Qual é a qualidade técnica da foto?"
+   },
+   "zh": {
+    "criteria": [
+     "非常差：模糊、昏暗或裁剪过度",
+     "较差但可用",
+     "良好",
+     "优秀：清晰锐利且光线充足"
+    ],
+    "instructions": "这张照片的技术质量如何？"
+   }
+  }
+ },
+ "photo.main_subject": {
+  "paraphrases": [
+   "What is the primary subject shown in the image?",
+   "What is the image mainly depicting?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "person": "una o más personas",
+     "animal": "un animal",
+     "vehicle": "un vehículo",
+     "food": "comida o bebida",
+     "building": "un edificio o estructura",
+     "object": "un objeto cotidiano",
+     "landscape": "un paisaje o escenario natural"
+    },
+    "instructions": "¿Cuál es el tema principal de la imagen?"
+   },
+   "fr": {
+    "criteria": {
+     "person": "une ou plusieurs personnes",
+     "animal": "un animal",
+     "vehicle": "un véhicule",
+     "food": "de la nourriture ou une boisson",
+     "building": "un bâtiment ou une structure",
+     "object": "un objet courant",
+     "landscape": "un paysage ou une scène naturelle"
+    },
+    "instructions": "Quel est le sujet principal de l’image ?"
+   }
+  }
+ },
+ "photo.motion": {
+  "paraphrases": [
+   "How much movement or physical action is visible in the image?",
+   "What level of action or movement is depicted in the image?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "completamente estática",
+     "movimento slight",
+     "ação clara",
+     "ação rápida"
+    ],
+    "instructions": "Quanta ação ou movimento a imagem mostra?"
+   },
+   "zh": {
+    "criteria": [
+     "完全静止",
+     "轻微移动",
+     "明显动作",
+     "快速动作"
+    ],
+    "instructions": "图片中展现了多大程度的动作或运动？"
+   }
+  }
+ },
+ "photo.nature_amount": {
+  "paraphrases": [
+   "What proportion of the image consists of natural elements such as plants, sky, water, or terrain?",
+   "How much of the image is made up of nature, including plants, sky, water, and terrain?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "no hay naturaleza",
+     "un poco",
+     "principalmente naturaleza",
+     "paisaje totalmente natural"
+    ],
+    "instructions": "¿Qué proporción de la imagen corresponde a elementos naturales, como plantas, cielo, agua o terreno?"
+   },
+   "fr": {
+    "criteria": [
+     "aucune nature",
+     "un peu",
+     "principalement de la nature",
+     "nature sauvage intégrale"
+    ],
+    "instructions": "Quelle proportion de l’image est constituée d’éléments naturels, tels que les plantes, le ciel, l’eau ou le terrain ?"
+   }
+  }
+ },
+ "photo.night": {
+  "paraphrases": [
+   "Was this photograph captured at night or in the dark?",
+   "Did this photo get taken during nighttime or in darkness?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या यह तस्वीर रात में या अंधेरे में ली गई थी?"
+   },
+   "ja": {
+    "instructions": "この写真は夜間または暗闇の中で撮影されましたか？"
+   }
+  }
+ },
+ "photo.obj_present": {
+  "paraphrases": [
+   "Can you see a {obj} in the image?",
+   "Does the image contain a {obj}?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "Há um {obj} na imagem?"
+   },
+   "zh": {
+    "instructions": "图像中有{obj}吗？"
+   }
+  }
+ },
+ "photo.outdoors": {
+  "paraphrases": [
+   "Was this picture taken outside?",
+   "Does this photo show an outdoor scene?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या यह फोटो बाहर ली गई थी?"
+   },
+   "ja": {
+    "instructions": "この写真は屋外で撮られたものですか？"
+   }
+  }
+ },
+ "photo.people_count": {
+  "paraphrases": [
+   "How many individuals can be seen?",
+   "What is the number of people shown in the image?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "none": "no hay personas",
+     "one": "exactamente una",
+     "two": "exactamente dos",
+     "three_to_five": "entre tres y cinco",
+     "more_than_five": "más de cinco"
+    },
+    "instructions": "¿Cuántas personas se pueden ver?"
+   },
+   "fr": {
+    "criteria": {
+     "none": "aucune personne",
+     "one": "exactement une",
+     "two": "exactement deux",
+     "three_to_five": "entre trois et cinq",
+     "more_than_five": "plus de cinq"
+    },
+    "instructions": "Combien de personnes sont visibles ?"
+   }
+  }
+ },
+ "photo.people_present": {
+  "paraphrases": [
+   "Can any people be seen in the image?",
+   "Are there any people visible in the picture?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل يظهر أي أشخاص في الصورة؟"
+   },
+   "de": {
+    "instructions": "Sind in dem Bild Personen zu sehen?"
+   }
+  }
+ },
+ "photo.photo_style": {
+  "paraphrases": [
+   "What type of photograph is shown here?",
+   "How would you describe the style of this photo?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "snapshot": "foto casual cotidiana",
+     "professional": "fotografía preparada o profesional",
+     "selfie": "autorretrato tomado por la persona aparece en la imagen",
+     "aerial": "tomada desde muy arriba",
+     "closeup": "primer plano o macro de un sujeto pequeño",
+     "other": "ninguna de las anteriores"
+    },
+    "instructions": "¿Qué tipo de foto es esta?"
+   },
+   "fr": {
+    "criteria": {
+     "snapshot": "photo décontractée de tous les jours",
+     "professional": "photographie mise en scène ou professionnelle",
+     "selfie": "autoportrait pris par la personne représentée",
+     "aerial": "prise de très haut",
+     "closeup": "gros plan ou macro d’un petit sujet",
+     "other": "aucune des réponses ci-dessus"
+    },
+    "instructions": "Quel type de photo est-ce ?"
+   }
+  }
+ },
+ "photo.room_type": {
+  "paraphrases": [
+   "What type of room is pictured?",
+   "Which kind of room is shown in the image?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "kitchen": "cozinha",
+     "living_room": "sala de estar",
+     "bedroom": "quarto",
+     "bathroom": "banheiro",
+     "office": "escritório ou sala de aula",
+     "not_indoors": "a foto não mostra um ambiente"
+    },
+    "instructions": "Que tipo de ambiente é mostrado?"
+   },
+   "zh": {
+    "criteria": {
+     "kitchen": "厨房",
+     "living_room": "客厅",
+     "bedroom": "卧室",
+     "bathroom": "浴室",
+     "office": "办公室或教室",
+     "not_indoors": "照片中不是房间"
+    },
+    "instructions": "图片中是什么类型的房间？"
+   }
+  }
+ },
+ "photo.safety_hazard": {
+  "paraphrases": [
+   "How much physical risk or danger is visible in the scene?",
+   "What level of physical danger does the scene present?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "لا يوجد خطر ظاهر",
+     "خطر طفيف",
+     "خطر واضح",
+     "موقف خطير"
+    ],
+    "instructions": "كم مستوى الخطر أو الخطر الجسدي الذي يُظهره المشهد؟"
+   },
+   "de": {
+    "criteria": [
+     "kein sichtbares Risiko",
+     "geringes Risiko",
+     "deutliches Risiko",
+     "gefährliche Situation"
+    ],
+    "instructions": "Wie viel physisches Risiko oder welche Gefahr zeigt die Szene?"
+   }
+  }
+ },
+ "photo.screen_device": {
+  "paraphrases": [
+   "Is a phone, laptop, television, or computer screen visible?",
+   "Can you see a phone, laptop, television, or computer screen?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या फ़ोन, लैपटॉप, टेलीविज़न या कंप्यूटर स्क्रीन दिखाई देती है?"
+   },
+   "ja": {
+    "instructions": "携帯電話、ラップトップ、テレビ、または_reward受益者 computer screenが見えますか？"
+   }
+  }
+ },
+ "photo.setting": {
+  "paraphrases": [
+   "In what type of location was this picture taken?",
+   "Where exactly was this photograph taken?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "home": "داخل منزل أو شقة",
+     "workplace": "مكتب أو مصنع أو مكان عمل آخر",
+     "street": "شارع أو طريق أو منطقة خارجية حضرية",
+     "nature": "ريف أو حديقة أو شاطئ أو جبال",
+     "shop_or_restaurant": "متجر أو سوق أو مقهى أو مطعم",
+     "transport": "محطة أو مطار أو داخل مركبة",
+     "sports_venue": "حقل أو ملعب أو صالة رياضية أو منحدر تزلج",
+     "other": "لا شيء من الخيارات أعلاه"
+    },
+    "instructions": "أين تم التقاط هذه الصورة؟"
+   },
+   "de": {
+    "criteria": {
+     "home": "in einem Haus oder einer Wohnung",
+     "workplace": "in einem Büro, einer Fabrik oder einem anderen Arbeitsplatz",
+     "street": "auf einer Straße, einem Weg oder in einem städtischen Außenbereich",
+     "nature": "auf dem Land, in einem Park, am Strand oder in den Bergen",
+     "shop_or_restaurant": "in einem Laden, auf einem Markt, in einem Café oder Restaurant",
+     "transport": "an einem Bahnhof, Flughafen oder in einem Fahrzeug",
+     "sports_venue": "auf einem Feld, Spielfeld, in einer Sporthalle oder auf einer Skipiste",
+     "other": "keines der oben genannten"
+    },
+    "instructions": "Wo wurde dieses Foto aufgenommen?"
+   }
+  }
+ },
+ "photo.sport_activity": {
+  "paraphrases": [
+   "Is a person participating in a sport or exercising physically?",
+   "Is anyone engaged in playing a sport or doing physical activity?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿Alguien está practicando un deporte o haciendo ejercicio físico?"
+   },
+   "fr": {
+    "instructions": "Quelqu’un pratique-t-il un sport ou fait-il de l’exercice physique ?"
+   }
+  }
+ },
+ "photo.text_visible": {
+  "paraphrases": [
+   "Does the image contain any readable text, such as a sign, label, or written message?",
+   "Can any text be read in the image, including text on signs, labels, or other writing?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿Hay texto legible en la imagen, como un cartel, una etiqueta o alguna escritura?"
+   },
+   "fr": {
+    "instructions": "Y a-t-il du texte lisible dans l’image, par exemple un panneau, une étiquette ou une inscription ?"
+   }
+  }
+ },
+ "photo.time_of_day": {
+  "paraphrases": [
+   "At what time of day was the photo taken?",
+   "What part of the day is depicted in the photo?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "day": "दिन की रोशनी",
+     "dusk_or_dawn": "सूर्योदय या सूर्यास्त की रोशनी",
+     "night": "रात",
+     "unclear": "फ़ोटो अंदर की है या समय का पता नहीं चल सकता"
+    },
+    "instructions": "फ़ोटो दिन के किस समय ली गई है?"
+   },
+   "ja": {
+    "criteria": {
+     "day": "昼光",
+     "dusk_or_dawn": "日の出または日の入りの光",
+     "night": "夜",
+     "unclear": "室内か判断できない"
+    },
+    "instructions": "この写真はどの時間帯に撮影されたものですか？"
+   }
+  }
+ },
+ "photo.vehicle_present": {
+  "paraphrases": [
+   "Does the image contain a car, bus, bicycle, motorcycle, boat, plane, or train?",
+   "Is any kind of vehicle—such as a car, bus, bicycle, motorcycle, boat, plane, or train—visible in the image?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "Há algum veículo (carro, ônibus, bicicleta, motocicleta, barco, avião ou trem) na imagem?"
+   },
+   "zh": {
+    "instructions": "图像中是否有车辆（汽车、公交车、自行车、摩托车、船、飞机或火车）？"
+   }
+  }
+ },
+ "photo.water_present": {
+  "paraphrases": [
+   "Can you see a body of water, such as a sea, lake, river, or pool?",
+   "Is any body of water like the sea, a lake, a river, or a pool visible in the image?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "É visível um corpo de água, como um mar, lago, rio ou piscina?"
+   },
+   "zh": {
+    "instructions": "图中是否可以看到水体，例如海洋、湖泊、河流或游泳池？"
+   }
+  }
+ },
+ "photo.weather": {
+  "paraphrases": [
+   "What kind of weather is shown in the picture?",
+   "How is the weather in the image?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "sunny": "claro e ensolarado",
+     "cloudy": "nublado ou com nuvens",
+     "rainy": "chuva ou piso molhado",
+     "snowy": "neve ou gelo",
+     "not_visible": "ambiente interno ou o tempo não pode ser visto"
+    },
+    "instructions": "Como está o tempo na foto?"
+   },
+   "zh": {
+    "criteria": {
+     "sunny": "晴朗",
+     "cloudy": "阴天或多云",
+     "rainy": "下雨或地面湿滑",
+     "snowy": "下雪或结冰",
+     "not_visible": "在室内或无法看到天气"
+    },
+    "instructions": "照片中的天气怎么样？"
+   }
+  }
+ },
+ "receipt.alcohol": {
+  "paraphrases": [
+   "Are alcoholic beverages included in the purchase?",
+   "Does buying the item come with any alcoholic drinks?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या खरीद में शराबयुक्त पेय शामिल हैं?"
+   },
+   "ja": {
+    "instructions": "購入にはアルコール饮料が含まれますか？"
+   }
+  }
+ },
+ "receipt.cash_change": {
+  "paraphrases": [
+   "Does the image show both the cash handed over and the change returned?",
+   "Are both the cash payment tendered and the change given shown in the image?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या यह छवि दिए गए नकद और वापस दिए गए बदले दोनों को दिखाती है?"
+   },
+   "ja": {
+    "instructions": "この画像は、支払われた現金と渡されたお釣りの両方を示していますか？"
+   }
+  }
+ },
+ "receipt.category": {
+  "paraphrases": [
+   "Which category of items or services was purchased?",
+   "What type of purchase was made?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "meals": "طعام ومشروبات في مطعم أو مقهى",
+     "groceries": "أطعمة وسلع منزلية من السوبر ماركت",
+     "transport": "وقود أو تاكسي أو قطار أو رحلات طيران أو مواقف سيارات",
+     "lodging": "فندق أو إقامة",
+     "retail": "ملابس أو إلكترونيات أو سلع أخرى",
+     "services": "خدمات مرافق أو إصلاحات أو اشتراكات",
+     "other": "كل شيء آخر أو ما لا يُعد شراءً"
+    },
+    "instructions": "ما الذي تم شراؤه؟"
+   },
+   "de": {
+    "criteria": {
+     "meals": "Essen und Getränke in einem Restaurant oder Café",
+     "groceries": "Lebensmittel und Haushaltswaren im Supermarkt",
+     "transport": "Kraftstoff, Taxi, Zug, Flugtickets oder Parken",
+     "lodging": "Hotel oder Unterkunft",
+     "retail": "Kleidung, Elektronik oder andere Waren",
+     "services": "Versorgungsleistungen, Reparaturen oder Abonnements",
+     "other": "Alles andere oder kein Kauf"
+    },
+    "instructions": "Was wurde gekauft?"
+   }
+  }
+ },
+ "receipt.condition": {
+  "paraphrases": [
+   "What is the physical condition of the document?",
+   "How does the document appear in terms of its condition?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "clean_scan": "साफ़ सपाट स्कैन या डिजिटल",
+     "photo_flat": "फ़ोटोग्राफ़ किया गया लेकिन सपाट",
+     "crumpled": "सिकुड़ा या मोड़ा हुआ",
+     "faded": "फीका प्रिंट",
+     "partial": "आंशिक रूप से काटा हुआ"
+    },
+    "instructions": "दस्तावेज़ की स्थिति कैसी है?"
+   },
+   "ja": {
+    "criteria": {
+     "clean_scan": "クリーンな平坦スキャンまたはデジタル",
+     "photo_flat": "撮影されているが平坦",
+     "crumpled": "くしゃくしゃまたは折れている",
+     "faded": "色が褪せた印刷物",
+     "partial": "一部が切れている"
+    },
+    "instructions": "この文書はどのような状態ですか？"
+   }
+  }
+ },
+ "receipt.currency": {
+  "paraphrases": [
+   "What currency are the monetary amounts denominated in?",
+   "In which currency are the amounts shown?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "usd": "Dólar americano",
+     "eur": "Euro",
+     "gbp": "Libra britânica",
+     "inr": "Rupeia indiana",
+     "idr": "Rupia indonésia",
+     "jpy_or_cny": "Iene ou yuan",
+     "other": "Outra moeda",
+     "not_shown": "Nenhuma moeda visível"
+    },
+    "instructions": "Em qual moeda estão os valores?"
+   },
+   "zh": {
+    "criteria": {
+     "usd": "美元",
+     "eur": "欧元",
+     "gbp": "英镑",
+     "inr": "印度卢比",
+     "idr": "印度尼西亚卢比",
+     "jpy_or_cny": "日元或人民币",
+     "other": "其他货币",
+     "not_shown": "未看到货币"
+    },
+    "instructions": "这些金额使用的是哪种货币？"
+   }
+  }
+ },
+ "receipt.detail_level": {
+  "paraphrases": [
+   "What level of detail does the itemization provide?",
+   "How much information is included in the breakdown of charges?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "الإجمالي فقط",
+     "العناصر دون الأسعار",
+     "العناصر مع الأسعار",
+     "تفصيل كامل يشمل الضريبة وطريقة الدفع"
+    ],
+    "instructions": "ما مستوى التفصيل في بيان_breakdown؟"
+   },
+   "de": {
+    "criteria": [
+     "nur die Summe",
+     "Positionen ohne Preise",
+     "Positionen mit Preisen",
+     "vollständige Aufschlüsselung mit Steuer und Zahlung"
+    ],
+    "instructions": "Wie detailliert ist die Aufschlüsselung?"
+   }
+  }
+ },
+ "receipt.doc_kind": {
+  "paraphrases": [
+   "What type of document is shown here?",
+   "How would this document be classified?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "printed_receipt": "मुद्रित रसीद",
+     "handwritten_receipt": "हस्तलिखित रसीद",
+     "invoice": "चालान",
+     "order_form": "ऑर्डर फ़ॉर्म",
+     "application_form": "आवेदन फ़ॉर्म",
+     "ticket": "टिकट या पास",
+     "other": "अन्य"
+    },
+    "instructions": "यह दस्तावेज़ किस प्रकार का है?"
+   },
+   "ja": {
+    "criteria": {
+     "printed_receipt": "印刷された領収書",
+     "handwritten_receipt": "手書きの領収書",
+     "invoice": "請求書",
+     "order_form": "注文書",
+     "application_form": "申込書",
+     "ticket": "切符またはパス",
+     "other": "その他"
+    },
+    "instructions": "この書類はどのような種類ですか。"
+   }
+  }
+ },
+ "receipt.expense_category": {
+  "paraphrases": [
+   "Which category of expenses is the most appropriate?",
+   "What expense category best matches?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "meals": "وجبات",
+     "travel": "السفر",
+     "office_supplies": "اللوازم المكتبية",
+     "accommodation": "الإقامة",
+     "entertainment": "الترفيه",
+     "other": "أخرى"
+    },
+    "instructions": "أي فئة من فئات المصروفات هي الأنسب؟"
+   },
+   "de": {
+    "criteria": {
+     "meals": "Essen",
+     "travel": "Reisen",
+     "office_supplies": "Büromaterial",
+     "accommodation": "Unterkunft",
+     "entertainment": "Unterhaltung",
+     "other": "Sonstiges"
+    },
+    "instructions": "Welche Ausgabenkategorie passt am besten?"
+   }
+  }
+ },
+ "receipt.expense_completeness": {
+  "paraphrases": [
+   "How complete is this document as supporting evidence for an expense claim?",
+   "As proof of an expense claim, how much of the required information does it include?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": [
+     "मुख्य जानकारी missing है",
+     "कुछ फ़ील्ड missing हैं",
+     "अधिकतर पूर्ण है",
+     "इसमें merchant, date, total और tax मौजूद हैं"
+    ],
+    "instructions": "व्यय दावे के प्रमाण के रूप में यह कितना पूर्ण है?"
+   },
+   "ja": {
+    "criteria": [
+     "重要な情報が欠けています",
+     "一部の項目が欠けています",
+     "ほぼ完全です",
+     "merchant、date、total、tax が記載されています"
+    ],
+    "instructions": "経費請求の証明として、これはどの程度完全ですか？"
+   }
+  }
+ },
+ "receipt.form_complexity": {
+  "paraphrases": [
+   "How complicated is the layout of the document?",
+   "What level of layout complexity does the document have?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "muy simple",
+     "simple",
+     "moderado",
+     "complejo, muchas secciones"
+    ],
+    "instructions": "¿Qué tan complejo es el diseño del documento?"
+   },
+   "fr": {
+    "criteria": [
+     "très simple",
+     "simple",
+     "modéré",
+     "complexe, nombreuses sections"
+    ],
+    "instructions": "À quel point la mise en page du document est-elle complexe ?"
+   }
+  }
+ },
+ "receipt.fraud_suspicion": {
+  "paraphrases": [
+   "How suspicious does this document appear to be?",
+   "To what extent does the document look suspicious?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "parece auténtico",
+     "tiene algunas rarezas menores",
+     "resulta sospechoso",
+     "probablemente está alterado o es falso"
+    ],
+    "instructions": "¿Qué tan sospechoso parece el documento?"
+   },
+   "fr": {
+    "criteria": [
+     "semble authentique",
+     "présente quelques bizarreries mineures",
+     "semble suspect",
+     "a probablement été altéré ou est probablement faux"
+    ],
+    "instructions": "À quel point le document semble-t-il suspect ?"
+   }
+  }
+ },
+ "receipt.handwritten": {
+  "paraphrases": [
+   "Is the document handwritten?",
+   "Was the document written by hand?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "O documento é manuscrito?"
+   },
+   "zh": {
+    "instructions": "该文档是手写的吗？"
+   }
+  }
+ },
+ "receipt.has_date_time": {
+  "paraphrases": [
+   "Does the image display a transaction date or time?",
+   "Is a date or time for a transaction visible?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل يظهر تاريخ أو وقت المعاملة؟"
+   },
+   "de": {
+    "instructions": "Wird ein Transaktionsdatum oder eine Transaktionszeit angezeigt?"
+   }
+  }
+ },
+ "receipt.has_discount": {
+  "paraphrases": [
+   "Has a discount or promotion been applied?",
+   "Is a discount or promotion in effect?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل يتم تطبيق خصم أو عرض ترويجي؟"
+   },
+   "de": {
+    "instructions": "Wird ein Rabatt oder eine Werbeaktion angewendet?"
+   }
+  }
+ },
+ "receipt.has_tax": {
+  "paraphrases": [
+   "Is VAT, GST, sales tax, or another type of tax or service charge displayed?",
+   "Does the image show any tax or service charge, such as VAT, GST, or sales tax?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "É exibido algum imposto ou taxa de serviço, como VAT, GST ou sales tax?"
+   },
+   "zh": {
+    "instructions": "图中是否显示了税金或服务费，例如增值税、消费税或销售税？"
+   }
+  }
+ },
+ "receipt.image_quality": {
+  "paraphrases": [
+   "How would you rate the quality of the image?",
+   "What is the overall quality level of the image?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "سيئة جدًا: ضبابية أو داكنة أو مقطوعة جزئيًا بشكل كبير",
+     "سيئة لكنها قابلة للاستخدام",
+     "جيدة",
+     "ممتازة: حادة وجيدة الإضاءة"
+    ],
+    "instructions": "ما مدى جودة الصورة؟"
+   },
+   "de": {
+    "criteria": [
+     "sehr schlecht: unscharf, dunkel oder stark zugeschnitten",
+     "schlecht, aber brauchbar",
+     "gut",
+     "ausgezeichnet: scharf und gut beleuchtet"
+    ],
+    "instructions": "Wie gut ist die Bildqualität?"
+   }
+  }
+ },
+ "receipt.is_form": {
+  "paraphrases": [
+   "Does this image show a form with blanks or fields to complete?",
+   "Is this a document that people fill in by entering information in designated fields?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿Es este un formulario con campos para completar?"
+   },
+   "fr": {
+    "instructions": "Est-ce un formulaire comportant des champs à remplir ?"
+   }
+  }
+ },
+ "receipt.is_receipt": {
+  "paraphrases": [
+   "Is this document a purchase receipt or a bill?",
+   "Would you describe this as a purchase receipt or bill?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل هذه-docsuments مستند إيصال شراء أم فاتورة؟"
+   },
+   "de": {
+    "instructions": "Ist dies ein Kaufbeleg oder eine Rechnung?"
+   }
+  }
+ },
+ "receipt.item_count": {
+  "paraphrases": [
+   "How many line items appear in the list?",
+   "What is the number of line items that are listed?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "one": "واحد",
+     "two_to_three": "من اثنين إلى ثلاثة",
+     "four_to_six": "من أربعة إلى ستة",
+     "seven_or_more": "سبعة أو أكثر",
+     "not_readable": "غير قابل للقراءة"
+    },
+    "instructions": "كم عدد البنود المدرجة في القائمة؟"
+   },
+   "de": {
+    "criteria": {
+     "one": "eine",
+     "two_to_three": "zwei bis drei",
+     "four_to_six": "vier bis sechs",
+     "seven_or_more": "sieben oder mehr",
+     "not_readable": "nicht lesbar"
+    },
+    "instructions": "Wie viele Positionen sind aufgeführt?"
+   }
+  }
+ },
+ "receipt.language": {
+  "paraphrases": [
+   "Which language is the document written in?",
+   "In what language is the document?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "english": "inglês",
+     "indonesian_malay": "malai indonésio",
+     "spanish": "espanhol",
+     "chinese": "chinês",
+     "japanese": "japonês",
+     "other": "outro idioma"
+    },
+    "instructions": "Em que idioma está o documento?"
+   },
+   "zh": {
+    "criteria": {
+     "english": "英语",
+     "indonesian_malay": "印度尼西亚语",
+     "spanish": "西班牙语",
+     "chinese": "中文",
+     "japanese": "日语",
+     "other": "其他语言"
+    },
+    "instructions": "该文档使用的是哪种语言？"
+   }
+  }
+ },
+ "receipt.legibility": {
+  "paraphrases": [
+   "How easy is it to read the text?",
+   "How legible is the writing in the image?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "ilegível",
+     "difícil de ler",
+     "legível com algum esforço",
+     "perfeitamente claro"
+    ],
+    "instructions": "Quão legível é o texto?"
+   },
+   "zh": {
+    "criteria": [
+     "无法辨认",
+     "难以阅读",
+     "需要费力才能看清",
+     "非常清晰"
+    ],
+    "instructions": "文字有多清晰易读？"
+   }
+  }
+ },
+ "receipt.line_items": {
+  "paraphrases": [
+   "How many items are on the list?",
+   "What is the number of listed items?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": [
+     "एक",
+     "दो या तीन",
+     "चार से सात",
+     "आठ या अधिक"
+    ],
+    "instructions": "सूची में कितने आइटम दिए गए हैं?"
+   },
+   "ja": {
+    "criteria": [
+     "1個",
+     "2個または3個",
+     "4個から7個",
+     "8個以上"
+    ],
+    "instructions": "リストには何個の項目が記載されていますか？"
+   }
+  }
+ },
+ "receipt.many_items": {
+  "paraphrases": [
+   "Is the document showing more than five items that were purchased?",
+   "Are there over five purchased items listed in the document?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या दस्तावेज़ में खरीदे गए पाँच से अधिक वस्तुएँ सूचीबद्ध हैं?"
+   },
+   "ja": {
+    "instructions": "この文書には、購入された/itemsが5つより多く記載されていますか？"
+   }
+  }
+ },
+ "receipt.merchant_type": {
+  "paraphrases": [
+   "Which kind of merchant issued it?",
+   "What category of merchant was the issuer?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "restaurant_cafe": "restaurante o cafetería",
+     "supermarket": "supermercado",
+     "pharmacy": "farmacia",
+     "fuel_station": "gasolinera",
+     "hotel": "hotel",
+     "online_store": "tienda en línea",
+     "other": "otro"
+    },
+    "instructions": "¿Qué tipo de comerciante emitió esto?"
+   },
+   "fr": {
+    "criteria": {
+     "restaurant_cafe": "restaurant ou café",
+     "supermarket": "supermarché",
+     "pharmacy": "pharmacie",
+     "fuel_station": "station-service",
+     "hotel": "hôtel",
+     "online_store": "magasin en ligne",
+     "other": "autre"
+    },
+    "instructions": "Quel type de commerçant a émis ceci ?"
+   }
+  }
+ },
+ "receipt.order_size": {
+  "paraphrases": [
+   "What is the size of the order?",
+   "How big is the order?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "um único item pequeno",
+     "uma única refeição ou alguns itens",
+     "uma refeição para grupo ou uma cesta completa",
+     "um pedido muito grande"
+    ],
+    "instructions": "Qual é o tamanho do pedido?"
+   },
+   "zh": {
+    "criteria": [
+     "单个小件",
+     "一份餐食或几件商品",
+     "多人份餐食或一整篮商品",
+     "非常大的订单"
+    ],
+    "instructions": "这份订单有多大？"
+   }
+  }
+ },
+ "receipt.paid_card": {
+  "paraphrases": [
+   "Did the payment go through by card?",
+   "Was the payment paid for using a card?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿El pago se realizó con tarjeta?"
+   },
+   "fr": {
+    "instructions": "Le paiement a-t-il été effectué par carte ?"
+   }
+  }
+ },
+ "receipt.payment_method": {
+  "paraphrases": [
+   "How was the payment made?",
+   "What payment method was used?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "cash": "efectivo",
+     "card": "tarjeta de crédito o débito",
+     "mobile_wallet": "pago por teléfono o código QR",
+     "bank_transfer": "transferencia bancaria",
+     "not_shown": "método de pago no mostrado"
+    },
+    "instructions": "¿Cómo se pagó?"
+   },
+   "fr": {
+    "criteria": {
+     "cash": "espèces",
+     "card": "carte de crédit ou de débit",
+     "mobile_wallet": "paiement par téléphone ou par code QR",
+     "bank_transfer": "virement bancaire",
+     "not_shown": "mode de paiement non indiqué"
+    },
+    "instructions": "Comment le paiement a-t-il été effectué ?"
+   }
+  }
+ },
+ "receipt.store_name": {
+  "paraphrases": [
+   "Can the merchant or store name be read clearly?",
+   "Is the name of the merchant or store legible?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "O nome do comerciante ou da loja é legível?"
+   },
+   "zh": {
+    "instructions": "商户或商店的名称清晰可读吗？"
+   }
+  }
+ },
+ "receipt.tip_status": {
+  "paraphrases": [
+   "Is a gratuity entered on the document?",
+   "Does the document include a recorded tip?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "tip_included": "se muestra un importe de propina",
+     "tip_line_blank": "existe una línea de propina pero está vacía",
+     "no_tip": "no hay propina en el documento"
+    },
+    "instructions": "¿Se ha registrado una propina?"
+   },
+   "fr": {
+    "criteria": {
+     "tip_included": "un montant de pourboire est indiqué",
+     "tip_line_blank": "une ligne de pourboire existe mais elle est vide",
+     "no_tip": "aucun pourboire n’apparaît sur le document"
+    },
+    "instructions": "Un pourboire est-il enregistré ?"
+   }
+  }
+ },
+ "receipt.total_visible": {
+  "paraphrases": [
+   "Can the total amount be clearly seen?",
+   "Is the total amount visible in a clear and legible way?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿Se ve claramente el monto total?"
+   },
+   "fr": {
+    "instructions": "Le montant total est-il clairement visible ?"
+   }
+  }
+ },
+ "screenshot.alert_level": {
+  "paraphrases": [
+   "What level of seriousness does any displayed message have?",
+   "How severe is the message, if one is shown?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "nenhuma mensagem",
+     "informativa",
+     "aviso",
+     "alerta crítico"
+    ],
+    "instructions": "Qual é a gravidade de qualquer mensagem exibida?"
+   },
+   "zh": {
+    "criteria": [
+     "没有消息",
+     "信息提示",
+     "警告",
+     "严重警报"
+    ],
+    "instructions": "所示的任何消息有多严重？"
+   }
+  }
+ },
+ "screenshot.app_category": {
+  "paraphrases": [
+   "What type of app or website is this?",
+   "Which category does this app or website belong to?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "social_media": "redes sociales",
+     "shopping": "compras",
+     "messaging_email": "mensajería y correo electrónico",
+     "productivity": "documentos, hojas de cálculo y calendarios",
+     "developer_tools": "herramientas de desarrollo",
+     "news_media": "noticias, vídeo y música",
+     "system_settings": "ajustes del sistema",
+     "finance": "banca y pagos",
+     "maps_travel": "mapas y viajes",
+     "other": "otro"
+    },
+    "instructions": "¿Qué tipo de aplicación o sitio web es?"
+   },
+   "fr": {
+    "criteria": {
+     "social_media": "réseaux sociaux",
+     "shopping": "shopping",
+     "messaging_email": "messagerie et e-mail",
+     "productivity": "documents, feuilles de calcul et calendriers",
+     "developer_tools": "outils de développement",
+     "news_media": "actualités, vidéo et musique",
+     "system_settings": "paramètres du système",
+     "finance": "banque et paiements",
+     "maps_travel": "cartes et voyages",
+     "other": "autre"
+    },
+    "instructions": "Quel type d’application ou de site web est-ce ?"
+   }
+  }
+ },
+ "screenshot.asks_payment": {
+  "paraphrases": [
+   "Is the screen requesting payment information or card details?",
+   "Does the screen ask the user to provide payment or card information?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل تطلب الشاشة معلومات الدفع أو بيانات البطاقة؟"
+   },
+   "de": {
+    "instructions": "Fragt der Bildschirm nach Zahlungs- oder Kartendaten?"
+   }
+  }
+ },
+ "screenshot.clutter": {
+  "paraphrases": [
+   "How cluttered does the screen appear?",
+   "What level of clutter is on the screen?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": [
+     "कम",
+     "हल्की",
+     "व्यस्त",
+     "बिखरी हुई"
+    ],
+    "instructions": "स्क्रीन कितनी व्याप्त है?"
+   },
+   "ja": {
+    "criteria": [
+     "ほとんど混ざっていない",
+     "轻度",
+     "賑やか",
+     "散らかっている"
+    ],
+    "instructions": "画面はどのくらい cluttered ですか？"
+   }
+  }
+ },
+ "screenshot.content_type": {
+  "paraphrases": [
+   "What is mainly displayed on the screen?",
+   "Which best describes what the screen displays?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "text": "نص في معظمه",
+     "images": "صور في معظمها",
+     "video": "مشغل فيديو",
+     "mixed": "نص وصور"
+    },
+    "instructions": "ما الذي تعرضه الشاشة في معظم الوقت؟"
+   },
+   "de": {
+    "criteria": {
+     "text": "überwiegend Text",
+     "images": "überwiegend Bilder",
+     "video": "ein Video-Player",
+     "mixed": "Text und Bilder"
+    },
+    "instructions": "Was zeigt der Bildschirm hauptsächlich?"
+   }
+  }
+ },
+ "screenshot.contrast": {
+  "paraphrases": [
+   "How would you rate the visual contrast and readability?",
+   "Please assess the quality of the visual contrast and readability."
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "muy deficientes",
+     "deficientes",
+     "buenos",
+     "excelentes"
+    ],
+    "instructions": "¿Qué tan buenos son el contraste visual y la legibilidad?"
+   },
+   "fr": {
+    "criteria": [
+     "très mauvaise",
+     "mauvaise",
+     "bonne",
+     "excellente"
+    ],
+    "instructions": "Quelle est la qualité du contraste visuel et de la lisibilité ?"
+   }
+  }
+ },
+ "screenshot.dark_mode": {
+  "paraphrases": [
+   "Is the user interface displayed in dark mode?",
+   "Does the interface use a dark color theme?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿La interfaz está en modo oscuro?"
+   },
+   "fr": {
+    "instructions": "L’interface est-elle en mode sombre ?"
+   }
+  }
+ },
+ "screenshot.has_ads": {
+  "paraphrases": [
+   "Can any advertisements be seen in the image?",
+   "Are there any ads visible?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿Se ven anuncios publicitarios?"
+   },
+   "fr": {
+    "instructions": "Des publicités sont-elles visibles ?"
+   }
+  }
+ },
+ "screenshot.has_error": {
+  "paraphrases": [
+   "Is there an error message or warning on the screen?",
+   "Does the screen display an error message or a warning?"
+  ],
+  "translations": {
+   "es": {
+    "instructions": "¿Se muestra algún mensaje de error o advertencia?"
+   },
+   "fr": {
+    "instructions": "Un message d’erreur ou un avertissement est-il affiché ?"
+   }
+  }
+ },
+ "screenshot.has_popup": {
+  "paraphrases": [
+   "Is any part of the screen obscured by a popup, modal dialog, or cookie banner?",
+   "Does a popup, modal window, or cookie banner overlap or cover any portion of the screen?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "Uma janela popup, uma caixa de diálogo modal ou um banner de cookies está cobrindo alguma parte da tela?"
+   },
+   "zh": {
+    "instructions": "是否有弹出窗口、模态对话框或 Cookie 横幅遮挡了屏幕的一部分？"
+   }
+  }
+ },
+ "screenshot.has_search": {
+  "paraphrases": [
+   "Is a search box visible?",
+   "Does the image contain a search box?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या सर्च बॉक्स मौजूद है?"
+   },
+   "ja": {
+    "instructions": "検索ボックスはありますか？"
+   }
+  }
+ },
+ "screenshot.interactivity": {
+  "paraphrases": [
+   "How many interactive controls can be seen?",
+   "What is the number of interactive controls shown?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": [
+     "contenido estático",
+     "algunos controles",
+     "muchos controles",
+     "interfaz de aplicación compleja"
+    ],
+    "instructions": "¿Cuántos controles interactivos se ven?"
+   },
+   "fr": {
+    "criteria": [
+     "contenu statique",
+     "quelques commandes",
+     "beaucoup de commandes",
+     "interface d’application complexe"
+    ],
+    "instructions": "Combien de commandes interactives sont visibles ?"
+   }
+  }
+ },
+ "screenshot.is_mobile": {
+  "paraphrases": [
+   "Is this a mobile phone display?",
+   "Does the image show a mobile phone screen?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل هذه شاشة هاتف محمول؟"
+   },
+   "de": {
+    "instructions": "Ist dies ein Bildschirm eines Mobiltelefons?"
+   }
+  }
+ },
+ "screenshot.language": {
+  "paraphrases": [
+   "Which language is used primarily in the interface?",
+   "What language is mainly used on the interface shown?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "english": "अंग्रेज़ी",
+     "chinese": "चीनी",
+     "spanish": "स्पेनिश",
+     "japanese": "जापानी",
+     "german": "जर्मन",
+     "french": "फ़्रेंच",
+     "other": "अन्य"
+    },
+    "instructions": "इंटरफ़ेस की मुख्य भाषा कौन-सी है?"
+   },
+   "ja": {
+    "criteria": {
+     "english": "英語",
+     "chinese": "中国語",
+     "spanish": "スペイン語",
+     "japanese": "日本語",
+     "german": "ドイツ語",
+     "french": "フランス語",
+     "other": "その他"
+    },
+    "instructions": "このインターフェースで使用されている主な言語は何ですか？"
+   }
+  }
+ },
+ "screenshot.layout": {
+  "paraphrases": [
+   "Which screen layout is being used?",
+   "What type of layout is displayed on the screen?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "feed": "lista ou feed",
+     "grid": "grade de itens",
+     "form": "formulário",
+     "article": "artigo",
+     "dashboard": "painel",
+     "chat": "chat",
+     "editor": "editor"
+    },
+    "instructions": "Qual layout a tela está usando?"
+   },
+   "zh": {
+    "criteria": {
+     "feed": "列表或信息流",
+     "grid": "项目网格",
+     "form": "表单",
+     "article": "文章",
+     "dashboard": "仪表板",
+     "chat": "聊天",
+     "editor": "编辑器"
+    },
+    "instructions": "屏幕使用的是哪种布局？"
+   }
+  }
+ },
+ "screenshot.loading": {
+  "paraphrases": [
+   "Is the page still loading, or is a spinner or placeholder visible?",
+   "Does the page continue to load or display a spinner or placeholders?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "A página ainda está carregando ou está mostrando um indicador de carregamento ou elementos provisórios?"
+   },
+   "zh": {
+    "instructions": "页面是否仍在加载，或是否显示了加载图标或占位内容？"
+   }
+  }
+ },
+ "screenshot.login_form": {
+  "paraphrases": [
+   "Is a login or sign-in form visible in the image?",
+   "Does the image show a form for logging in or signing in?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या चित्र में लॉगिन या साइन-इन फ़ॉर्म दिखायी देता है?"
+   },
+   "ja": {
+    "instructions": "画像にログインまたはサインインフォームが表示されていますか？"
+   }
+  }
+ },
+ "screenshot.nav_menu": {
+  "paraphrases": [
+   "Can you see a navigation menu or tab bar anywhere in the image?",
+   "Is a navigation menu or a tab bar visible in the picture?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या एक नेविगेशन मेन्यू या टैब बार दिखाई देता है?"
+   },
+   "ja": {
+    "instructions": "ナビゲーションメニューやタブバーが見えますか？"
+   }
+  }
+ },
+ "screenshot.orientation": {
+  "paraphrases": [
+   "Is the screen taller than it is wide, or wider than it is tall?",
+   "Does the screen have a portrait orientation or a landscape orientation?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "portrait": "más alta que ancha",
+     "landscape": "más ancha que alta"
+    },
+    "instructions": "¿Cuál es la orientación de la pantalla?"
+   },
+   "fr": {
+    "criteria": {
+     "portrait": "plus haute que large",
+     "landscape": "plus large que haute"
+    },
+    "instructions": "Quelle est l’orientation de l’écran ?"
+   }
+  }
+ },
+ "screenshot.os": {
+  "paraphrases": [
+   "What operating system is shown?",
+   "Identify the operating system displayed in the image."
+  ],
+  "translations": {
+   "pt": {
+    "criteria": {
+     "ios": "ios",
+     "android": "android",
+     "windows": "windows",
+     "macos": "macos",
+     "linux": "linux",
+     "unknown": "não é possível determinar"
+    },
+    "instructions": "Qual é o sistema operacional?"
+   },
+   "zh": {
+    "criteria": {
+     "ios": "iOS",
+     "android": "安卓",
+     "windows": "Windows",
+     "macos": "macOS",
+     "linux": "Linux",
+     "unknown": "无法判断"
+    },
+    "instructions": "这是什么操作系统？"
+   }
+  }
+ },
+ "screenshot.personal_data": {
+  "paraphrases": [
+   "Does the screen display any personal information, including email addresses, phone numbers, or account numbers?",
+   "Is personal data like email addresses, phone numbers, or account numbers visible on the screen?"
+  ],
+  "translations": {
+   "ar": {
+    "instructions": "هل تعرض الشاشة بيانات شخصية مثل عناوين البريد الإلكتروني أو أرقام الهواتف أو أرقام الحسابات؟"
+   },
+   "de": {
+    "instructions": "Zeigt der Bildschirm persönliche Daten wie E-Mail-Adressen, Telefonnummern oder Kontonummern an?"
+   }
+  }
+ },
+ "screenshot.platform": {
+  "paraphrases": [
+   "Which type of interface is shown here?",
+   "What category of interface does this image depict?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "mobile_app": "تطبيق جوال",
+     "desktop_website": "موقع إلكتروني في متصفح سطح المكتب",
+     "mobile_website": "موقع إلكتروني على الهاتف",
+     "desktop_app": "تطبيق سطح مكتب",
+     "terminal_or_code": "طرفية أو محرر أكواد",
+     "game": "لعبة",
+     "other": "أخرى"
+    },
+    "instructions": "ما نوع الواجهة المعروض هنا؟"
+   },
+   "de": {
+    "criteria": {
+     "mobile_app": "mobile App",
+     "desktop_website": "Website in einem Desktop-Browser",
+     "mobile_website": "Website auf einem Telefon",
+     "desktop_app": "Desktop-Anwendung",
+     "terminal_or_code": "Terminal oder Code-Editor",
+     "game": "Spiel",
+     "other": "Sonstiges"
+    },
+    "instructions": "Welche Art von Benutzeroberfläche ist das?"
+   }
+  }
+ },
+ "screenshot.polish": {
+  "paraphrases": [
+   "How polished does the interface design appear?",
+   "What level of polish does the interface design have?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "مكسور أو بلا تنسيق",
+     "أساسي",
+     "مصقول",
+     "مصقول بدرجة عالية"
+    ],
+    "instructions": "ما مدى صقل تصميم الواجهة؟"
+   },
+   "de": {
+    "criteria": [
+     "kaputt oder ohne Gestaltung",
+     "einfach",
+     "hochwertig",
+     "besonders hochwertig"
+    ],
+    "instructions": "Wie hochwertig ist das Design der Benutzeroberfläche gestaltet?"
+   }
+  }
+ },
+ "screenshot.primary_action": {
+  "paraphrases": [
+   "What primary action does the screen encourage the user to take?",
+   "Which action is the screen primarily asking the user to perform?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": {
+     "sign_in": "تسجيل الدخول",
+     "search": "البحث",
+     "buy": "الشراء",
+     "submit_form": "تقديم النموذج",
+     "read": "القراءة",
+     "navigate": "التنقل",
+     "none": "لا شيء"
+    },
+    "instructions": "ما هو الإجراء الرئيسي الذي تدعو الشاشة المستخدم إلى undertakingه؟"
+   },
+   "de": {
+    "criteria": {
+     "sign_in": "anmelden",
+     "search": "suchen",
+     "buy": "kaufen",
+     "submit_form": "Formular absenden",
+     "read": "lesen",
+     "navigate": "navigieren",
+     "none": "keine"
+    },
+    "instructions": "Welche Hauptaktion lädt der Bildschirm den Benutzer ein, auszuführen?"
+   }
+  }
+ },
+ "screenshot.screen_purpose": {
+  "paraphrases": [
+   "What is the user currently doing on the screen?",
+   "Which activity is the user performing on this screen?"
+  ],
+  "translations": {
+   "hi": {
+    "criteria": {
+     "browsing": "कंटेंट ब्राउज़ करना",
+     "filling_form": "फ़ॉर्म भरना",
+     "reading": "लेख पढ़ना",
+     "settings": "सेटिंग्स बदलना",
+     "checkout": "भुगतान करना या चेकआउट करना",
+     "chatting": "संदेश भेजना",
+     "editing": "दस्तावेज़ या कोड संपादित करना",
+     "monitoring": "डैशबोर्ड देखना"
+    },
+    "instructions": "उपयोगकर्ता इस स्क्रीन पर क्या कर रहा है?"
+   },
+   "ja": {
+    "criteria": {
+     "browsing": "コンテンツを閲覧している",
+     "filling_form": "フォームに入力している",
+     "reading": "記事を読んでいる",
+     "settings": "設定を変更している",
+     "checkout": "支払いかチェックアウトを行っている",
+     "chatting": "メッセージを送っている",
+     "editing": "ドキュメントまたはコードを編集している",
+     "monitoring": "ダッシュボードを表示している"
+    },
+    "instructions": "ユーザーはこの画面で何をしていますか？"
+   }
+  }
+ },
+ "screenshot.security_risk": {
+  "paraphrases": [
+   "How much sensitive information can be seen on the screen?",
+   "What level of sensitive information is visible on screen?"
+  ],
+  "translations": {
+   "ar": {
+    "criteria": [
+     "لا شيء",
+     "منخفض",
+     "متوسط",
+     "مرتفع: بيانات اعتماد أو تفاصيل دفع ظاهرة"
+    ],
+    "instructions": "كم.amount من المعلومات الحساسة المكشوفة على الشاشة؟"
+   },
+   "de": {
+    "criteria": [
+     "keine",
+     "wenig",
+     "mittel",
+     "hoch: Anmeldedaten oder Zahlungsdetails sind sichtbar"
+    ],
+    "instructions": "Wie viele sensible Informationen sind auf dem Bildschirm sichtbar?"
+   }
+  }
+ },
+ "screenshot.state": {
+  "paraphrases": [
+   "Which interface state is currently displayed?",
+   "What condition is the interface in at the moment?"
+  ],
+  "translations": {
+   "es": {
+    "criteria": {
+     "normal": "normal",
+     "error": "error",
+     "empty": "no content yet",
+     "loading": "loading",
+     "success": "confirmation or success"
+    },
+    "instructions": "¿En qué estado se encuentra la interfaz?"
+   },
+   "fr": {
+    "criteria": {
+     "normal": "normal",
+     "error": "error",
+     "empty": "no content yet",
+     "loading": "loading",
+     "success": "confirmation or success"
+    },
+    "instructions": "Dans quel état l’interface se trouve-t-elle ?"
+   }
+  }
+ },
+ "screenshot.task_progress": {
+  "paraphrases": [
+   "How much progress has the user made on the task?",
+   "At what stage is the user in completing the task?"
+  ],
+  "translations": {
+   "pt": {
+    "criteria": [
+     "página inicial",
+     "em andamento",
+     "quase concluída",
+     "concluída"
+    ],
+    "instructions": "Qual é o progresso do usuário na execução da tarefa?"
+   },
+   "zh": {
+    "criteria": [
+     "起始页或主页",
+     "进行中",
+     "接近完成",
+     "已完成"
+    ],
+    "instructions": "用户执行任务进展到哪一步了？"
+   }
+  }
+ },
+ "screenshot.text_input": {
+  "paraphrases": [
+   "Does the image contain a text input field?",
+   "Can a user enter text into a field in the image?"
+  ],
+  "translations": {
+   "pt": {
+    "instructions": "Há algum campo de entrada de texto?"
+   },
+   "zh": {
+    "instructions": "图中是否有文本输入框？"
+   }
+  }
+ },
+ "meme.toxicity": {
+  "paraphrases": [
+   "How toxic is this post?",
+   "What level of toxicity does the post have?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "पोस्ट कितनी विषैली है?",
+    "criteria": [
+     "विषैली नहीं",
+     "हल्का अपमानजनक",
+     "आपत्तिजनक",
+     "नफरत भरा"
+    ]
+   },
+   "ja": {
+    "instructions": "この投稿はどれくらい有害ですか？",
+    "criteria": [
+     "有害ではない",
+     "少し失礼",
+     "攻撃的",
+     "嫌悪的"
+    ]
+   }
+  }
+ },
+ "chart.complexity": {
+  "paraphrases": [
+   "How complex is the figure?",
+   "What level of complexity does the figure have?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "आकृति कितनी जटिल है?",
+    "criteria": [
+     "बहुत सरल",
+     "सरल",
+     "मध्यम",
+     "जटिल"
+    ]
+   },
+   "ja": {
+    "instructions": "この図はどのくらい複雑ですか？",
+    "criteria": [
+     "非常に単純",
+     "単純",
+     "中間",
+     "複雑"
+    ]
+   }
+  }
+ },
+ "meme.offensive": {
+  "paraphrases": [
+   "Is there a group of people who might find the post offensive?",
+   "Could the content of the post offend any particular group of people?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "क्या यह पोस्ट किसी समूह के लोगों को आपत्तिजनक लग सकती है?"
+   },
+   "ja": {
+    "instructions": "この投稿は、特定のグループの人者を不快にさせる可能性がありますか？"
+   }
+  }
+ },
+ "screenshot.density": {
+  "paraphrases": [
+   "How much information is displayed on the screen?",
+   "How much content is shown on the screen?"
+  ],
+  "translations": {
+   "hi": {
+    "instructions": "स्क्रीन पर कितनी जानकारी दिखाई दे रही है?",
+    "criteria": [
+     "लगभग कोई सामग्री नहीं",
+     "हल्की",
+     "मध्यम",
+     "बहुत सघन"
+    ]
+   }
+  }
+ }
+}

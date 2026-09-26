@@ -50,6 +50,17 @@ DEFAULT_MODELS = {
     "typed-decisions": (BUNDLE_REPO, "typed-decisions"),
 }
 
+# Laya-V, the image checkpoint (built on laya-multilingual). Kept out of DEFAULT_MODELS so a
+# text-only deployment never downloads it: it is built on the first image request, or by
+# `preload(["vision"])`. LAYA_VISION_REPO points it at another repo or a local directory.
+VISION_REPO = os.environ.get("LAYA_VISION_REPO", "henilchopada/laya-v")
+VISION_MODELS = {"vision": (VISION_REPO, None)}
+
+
+def _is_image_state(state) -> bool:
+    return isinstance(state, dict) and state.get("image") is not None
+
+
 # The same checkpoints also live in their own repos, for anyone who prefers them.
 STANDALONE_MODELS = {
     "english": "convaiinnovations/laya",
@@ -77,6 +88,7 @@ _ALIASES = {
     "multi": "multilingual", "ml": "multilingual", "laya-multilingual": "multilingual",
     "typed": "typed-decisions", "typed_decisions": "typed-decisions",
     "laya-typed-decisions": "typed-decisions", "decisions": "typed-decisions",
+    "image": "vision", "laya-v": "vision", "laya-vision": "vision",
 }
 
 # Question-id signatures of the four typed-decisions workflows, used only when
@@ -110,9 +122,9 @@ class RouteDecision(dict):
 def normalise_name(name: str) -> str:
     key = str(name).strip().lower()
     key = _ALIASES.get(key, key)
-    if key not in DEFAULT_MODELS:
+    if key not in DEFAULT_MODELS and key not in VISION_MODELS:
         raise ValueError("unknown model %r; choose one of %s (or an alias: %s)"
-                         % (name, sorted(DEFAULT_MODELS), sorted(_ALIASES)))
+                         % (name, sorted(list(DEFAULT_MODELS) + list(VISION_MODELS)), sorted(_ALIASES)))
     return key
 
 
@@ -246,6 +258,7 @@ class Router(HookRegistry):
         self._hooks_lock = threading.RLock() if not hooks_concurrent else None
         self._hooks_mutex = threading.Lock()
         self.models = dict(STANDALONE_MODELS if standalone_repos else DEFAULT_MODELS)
+        self.models.update(VISION_MODELS)
         if models:
             self.models.update({normalise_name(k): v for k, v in models.items()})
         self.device = device
@@ -367,7 +380,10 @@ class Router(HookRegistry):
         server or a demo. `max_loaded` is raised to fit both the requested checkpoints and
         all already-resident agents, so incremental preloading does not evict either.
         """
-        names = [normalise_name(n) for n in (list(self.models) if names is None else names)]
+        # The default set is the text checkpoints; the vision checkpoint loads on the first image
+        # request unless it is named here.
+        default_names = [n for n in self.models if n not in VISION_MODELS]
+        names = [normalise_name(n) for n in (default_names if names is None else names)]
         with self._lock:
             self.max_loaded = max(self.max_loaded, len(set(names) | set(self._agents)))
         for n in names:
@@ -484,6 +500,11 @@ class Router(HookRegistry):
             key = normalise_name("typed-decisions" if str(task).lower().replace("-", "_") == "typed_decisions" else task)
             return RouteDecision(model=key, repo=_repo_str(self.models[key]), reason="explicit task=%r" % task,
                                  detection=None, workflow=None)
+
+        if _is_image_state(state):
+            # Only the vision checkpoint can read an image; language routing does not apply.
+            return RouteDecision(model="vision", repo=_repo_str(self.models["vision"]),
+                                 reason="state contains an image", detection=None, workflow=None)
 
         workflow = match_typed_decisions_workflow(questions or {})
         if workflow and self.auto_task_detection:

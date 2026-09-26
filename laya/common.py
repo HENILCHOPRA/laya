@@ -100,11 +100,18 @@ def build_sequence(
     option_order: Optional[List[int]] = None,
     truncate_left: bool = False,
     state_ids: Optional[List[int]] = None,
+    image_slots: int = 0,
 ):
     """Format: [CLS] <type> instructions [SEP] [MASK] opt0 [MASK] opt1 ... [SEP] state [SEP].
 
     `state_ids` lets a caller tokenize the shared state once and reuse it across every question,
     instead of re-serializing and re-tokenizing the same document per question.
+
+    `image_slots > 0` (Laya-V) reserves that many placeholder positions at the start of the state
+    segment, where `DecisionModel.forward` writes the image tokens, and returns
+    `(ids, markers, img_pos)` with `img_pos` the first reserved position. The image sits after the
+    option block, so marker positions are the same with and without it. With the default 0 the
+    result is exactly the text-only `(ids, markers)`.
     """
     mask_tok = tok.mask_token
     opts = render_options(q)
@@ -136,6 +143,14 @@ def build_sequence(
         markers.append(len(ids))
         ids.extend(o)
     ids.append(tok.sep_token_id)
+    img_pos = -1
+    if image_slots:
+        img_pos = len(ids)
+        if img_pos + image_slots + 1 > max_len:
+            raise ValueError("max_len=%d leaves no room for %d image slots after a %d-token question"
+                             % (max_len, image_slots, img_pos))
+        # Placeholders only: every one of these positions is overwritten with an image embedding.
+        ids.extend([tok.pad_token_id] * image_slots)
     room = max(0, max_len - len(ids) - 1)
     if state_ids is None:
         state_ids = encode_text(tok, serialize_state(state).replace(mask_tok, " "),
@@ -143,6 +158,8 @@ def build_sequence(
     # not state_ids[-room:]: with no room left, state_ids[-0:] is the whole state rather than none of it
     st = state_ids[max(0, len(state_ids) - room):] if truncate_left else state_ids[:room]
     ids = ids + st + [tok.sep_token_id]
+    if image_slots:
+        return ids[:max_len], [m for m in markers if m < max_len], img_pos
     return ids[:max_len], [m for m in markers if m < max_len]
 
 
@@ -150,9 +167,12 @@ class DecisionModel(nn.Module):
     """Bidirectional transformer encoder backbone + typed decision head."""
 
     def __init__(self, encoder: nn.Module, head_layers: int = 2, n_act: int = 2, dropout: float = 0.1,
-                 no_init: bool = False):
+                 no_init: bool = False, vision: Optional[nn.Module] = None):
         super().__init__()
         self.encoder = encoder
+        # Laya-V: a `laya.vision.VisionAdapter`, or None for a text-only checkpoint (a plain None
+        # attribute, so text-only state dicts keep exactly their old keys).
+        self.vision = vision
         d = encoder.config.hidden_size
         # `no_init` means the caller is about to load every parameter from a checkpoint, so the
         # head's initial values are pure overhead -- and not just time. transformers'
@@ -178,8 +198,28 @@ class DecisionModel(nn.Module):
             self.temperature = torch.empty_like(self.temperature, device="cpu")
         self.head_checkpointing = False
 
-    def forward(self, input_ids, attention_mask, marker_pos, marker_mask, qtype, detach_encoder: bool = False):
-        h = self.encoder(input_ids=input_ids, attention_mask=attention_mask).last_hidden_state
+    def embed_with_images(self, input_ids, vis_tokens, vis_index, img_pos):
+        """Token embeddings with image tokens written over each image row's reserved slots.
+
+        vis_tokens: [n_images, slots, d]; vis_index: [rows] image index per row (-1: no image);
+        img_pos: [rows] first reserved position per row.
+        """
+        emb = self.encoder.get_input_embeddings()(input_ids)
+        rows = (vis_index >= 0).nonzero(as_tuple=True)[0]
+        if rows.numel():
+            slots = vis_tokens.size(1)
+            pos = img_pos[rows, None] + torch.arange(slots, device=emb.device)[None, :]
+            vals = vis_tokens[vis_index[rows]].to(emb.dtype)
+            emb = emb.index_put((rows[:, None].expand_as(pos), pos), vals)
+        return emb
+
+    def forward(self, input_ids, attention_mask, marker_pos, marker_mask, qtype, detach_encoder: bool = False,
+                vis_tokens=None, vis_index=None, img_pos=None):
+        if vis_tokens is None:
+            h = self.encoder(input_ids=input_ids, attention_mask=attention_mask).last_hidden_state
+        else:
+            emb = self.embed_with_images(input_ids, vis_tokens, vis_index, img_pos)
+            h = self.encoder(inputs_embeds=emb, attention_mask=attention_mask).last_hidden_state
         if detach_encoder:
             h = h.detach()
         h = h + self.type_emb(qtype)[:, None, :]
@@ -261,18 +301,28 @@ def build_model(cfg: Dict, encoder_dir: Optional[str] = None, pretrained: bool =
     from transformers import AutoConfig, AutoModel
 
     head_layers, n_act = cfg.get("head_layers", 2), len(cfg.get("act_costs", {})) + 1
+    vcfg = cfg.get("vision")
     if not pretrained or (encoder_dir and os.path.exists(encoder_dir)):
         ecfg = AutoConfig.from_pretrained(encoder_dir or cfg["encoder"])
         _apply_rope_config(ecfg)
         with _no_init_weights():
             enc = AutoModel.from_config(ecfg, attn_implementation="sdpa")
-        return DecisionModel(enc, head_layers, n_act, no_init=True)
+        vision = None
+        if vcfg:
+            from .vision import build_vision_adapter
+            # The tower is built empty from its stored config: the checkpoint carries its weights.
+            vision = build_vision_adapter(vcfg, ecfg.hidden_size, pretrained=False)
+        return DecisionModel(enc, head_layers, n_act, no_init=True, vision=vision)
     # Training-time Hub load of the base encoder; allow pinning it like the checkpoints.
     kw = {"attn_implementation": "sdpa"}
     if revision:
         kw["revision"] = revision
     enc = AutoModel.from_pretrained(cfg["encoder"], **kw)
-    return DecisionModel(enc, head_layers, n_act)
+    vision = None
+    if vcfg:
+        from .vision import build_vision_adapter
+        vision = build_vision_adapter(vcfg, enc.config.hidden_size, pretrained=True)
+    return DecisionModel(enc, head_layers, n_act, vision=vision)
 
 
 def proper_reward(
@@ -369,6 +419,12 @@ def temp_bucket(qtype: int, k: int) -> str:
     return "%s:%s" % (QTYPE_NAMES[int(qtype)], size)
 
 
+def temp_key(qtype: int, k: int, modality: str = "text") -> str:
+    """Temperature bucket key including modality: `choice:3-5` for text, `image|choice:3-5` for images."""
+    b = temp_bucket(qtype, k)
+    return b if modality == "text" else "%s|%s" % (modality, b)
+
+
 # A fitted temperature below 1 sharpens the logits instead of softening them. The shipped
 # `choice:11+` bucket is 0.1006, which multiplies them ~10x: a 0.24 top probability is published as
 # 0.99, so a caller gating on confidence is told a coin flip is a certainty. No honest calibration
@@ -430,8 +486,14 @@ def collate_items(batch, pad_id: int):
         "marker_mask": mmask,
         "qtype": torch.tensor([it["qtype"] for it in items]),
         "label": torch.tensor([it.get("label", -1) for it in items]),
-        "meta": [{k: it[k] for k in it if k not in ("ids", "markers", "target")} for it in items],
+        "meta": [{k: it[k] for k in it if k not in ("ids", "markers", "target", "image")} for it in items],
     }
     if target is not None:
         res["target"] = target
+    # Laya-V rows: `img_pos` is the first reserved image slot, `image_idx` the row's image in the
+    # batch's image list (assigned by the caller). Text rows get -1 for both.
+    if any(it.get("img_pos", -1) >= 0 for it in items):
+        res["img_pos"] = torch.tensor([it.get("img_pos", -1) for it in items], dtype=torch.long)
+        res["vis_index"] = torch.tensor([it.get("image_idx", -1) if it.get("img_pos", -1) >= 0 else -1
+                                         for it in items], dtype=torch.long)
     return res
