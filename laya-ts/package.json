@@ -14,6 +14,6 @@
     "prepack": "npm run build"
   },
   "files": ["dist", "scripts"],
-  "devDependencies": { "typescript": "^5.6.0", "vitest": "^2.1.0" },
+  "devDependencies": { "typescript": "^5.6.0", "vitest": "^5.0.5" },
   "optionalDependencies": { "onnxruntime-node": "^1.20.0", "onnxruntime-web": "^1.20.0" }
 }
